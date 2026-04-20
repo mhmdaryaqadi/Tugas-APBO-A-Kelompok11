@@ -25,3 +25,6 @@
 * *Use Case 02 - Mengelola Menu (Penjual)* --> Penjual dapat menambahkan, mengedit (harga/deskripsi), atau menonaktifkan menu jika stok habis.
 * *Use Case 03 - Melihat Menu (Pembeli)* --> Pembeli melihat daftar menu warung yang sedang tersedia beserta harganya.
 * *Use Case 04 - Memesan & Kustomisasi Menu (Pembeli)* --> Pembeli memilih makanan, menambahkan catatan khusus (opsional), dan mengonfirmasi pesanan.
+* **Use Case 05 - Manajemen Antrian (Sistem/Penjual)** --> Sistem otomatis memberikan nomor urut pesanan. Penjual melihat pesanan masuk pada layar secara berurutan.
+* **Use Case 06 - Update Status Pesanan (Penjual)** --> Penjual mengubah status pesanan (misal: "Sedang Diproses" menjadi "Siap Diambil").
+* **Use Case 07 - Notifikasi Pick-up (Pembeli)** --> Pembeli menerima informasi atau melihat status bahwa makanan sudah siap diambil di warung.
