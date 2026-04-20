@@ -28,3 +28,11 @@
 * **Use Case 05 - Manajemen Antrian (Sistem/Penjual)** --> Sistem otomatis memberikan nomor urut pesanan. Penjual melihat pesanan masuk pada layar secara berurutan.
 * **Use Case 06 - Update Status Pesanan (Penjual)** --> Penjual mengubah status pesanan (misal: "Sedang Diproses" menjadi "Siap Diambil").
 * **Use Case 07 - Notifikasi Pick-up (Pembeli)** --> Pembeli menerima informasi atau melihat status bahwa makanan sudah siap diambil di warung.
+
+### Use Case
+- *UC-01 Login dan Registrasi:* Proses masuk ke sistem bagi penjual dan pembeli untuk memastikan data pesanan terekam dengan benar.
+- *UC-02 Manajemen Data Menu:* Penjual dapat menambah menu baru, mengupdate harga/deskripsi, atau menonaktifkan menu jika stok habis di aplikasi.
+- *UC-03 Pemesanan Digital:* Pembeli memilih menu dan mengirimkan data pesanan beserta catatan tambahan ke sistem.
+- *UC-04 Manajemen Antrean:* Sistem menyusun daftar pesanan secara otomatis dan menampilkannya pada layar penjual berdasarkan urutan waktu.
+- *UC-05 Update Status Pesanan:* Penjual melakukan pembaruan tahapan pesanan (Contoh: Menyiapkan ke Siap Diambil).
+- *UC-06 Monitoring Status:* Pembeli melihat progres pesanan mereka di perangkat masing-masing hingga muncul status siap untuk diambil.
