@@ -33,3 +33,11 @@
 4. **Proses Pembuatan:** Penjual memproses pesanan sesuai urutan pada layar dan mengubah status pesanan menjadi "Sedang Dimasak".
 5. **Notifikasi Siap Ambil:** Setelah makanan selesai disiapkan, penjual mengubah status pesanan menjadi "Siap Diambil", yang secara otomatis akan ter-update pada layar perangkat pembeli.
 6. **Pengambilan & Pembayaran:** Pembeli datang ke warung untuk mengambil pesanan dan melakukan transaksi pembayaran (tunai atau QRIS) secara langsung di tempat.
+
+### C. Use Case
+- *UC-01 Login dan Registrasi:* Proses masuk ke sistem bagi penjual dan pembeli untuk memastikan data pesanan terekam dengan benar.
+- *UC-02 Manajemen Data Menu:* Penjual dapat menambah menu baru, mengupdate harga/deskripsi, atau menonaktifkan menu jika stok habis di aplikasi.
+- *UC-03 Pemesanan Digital:* Pembeli memilih menu dan mengirimkan data pesanan beserta catatan tambahan ke sistem.
+- *UC-04 Manajemen Antrean:* Sistem menyusun daftar pesanan secara otomatis dan menampilkannya pada layar penjual berdasarkan urutan waktu.
+- *UC-05 Update Status Pesanan:* Penjual melakukan pembaruan tahapan pesanan (Contoh: Menyiapkan ke Siap Diambil).
+- *UC-06 Monitoring Status:* Pembeli melihat progres pesanan mereka di perangkat masing-masing hingga muncul status siap untuk diambil.
