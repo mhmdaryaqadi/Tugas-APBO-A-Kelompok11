@@ -21,3 +21,7 @@
 * *Actor 01 - Penjual* --> Membutuhkan antarmuka manajemen pesanan yang rapi untuk menampilkan daftar urutan pesanan yang masuk beserta detail permintaan khusus (misal: pedas, tanpa sayur), sehingga proses memasak lebih terarah, mengurangi risiko salah buat, dan tidak perlu lagi mencatat manual di kertas saat jam padat.
 * *Actor 02 - Pembeli* --> Membutuhkan kemudahan untuk melihat menu warung, melakukan pemesanan, dan mendapatkan nomor antrian digital dari jarak jauh. Pembeli juga membutuhkan fitur pemantauan status pesanan agar tidak perlu berdesakan menunggu di depan warung.
     
+* *Use Case 01 - Registrasi/Login* --> Pengguna (Pembeli/Penjual) membuat akun baru dan masuk ke sistem menggunakan kredensial yang valid.
+* *Use Case 02 - Mengelola Menu (Penjual)* --> Penjual dapat menambahkan, mengedit (harga/deskripsi), atau menonaktifkan menu jika stok habis.
+* *Use Case 03 - Melihat Menu (Pembeli)* --> Pembeli melihat daftar menu warung yang sedang tersedia beserta harganya.
+* *Use Case 04 - Memesan & Kustomisasi Menu (Pembeli)* --> Pembeli memilih makanan, menambahkan catatan khusus (opsional), dan mengonfirmasi pesanan.
