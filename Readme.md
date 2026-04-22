@@ -24,24 +24,23 @@
 ## 3. Analisis
 
 ### A. Aktor
-- **Penjual:** Pengguna yang bertugas mengelola daftar menu, menerima pesanan yang masuk sesuai urutan, dan memperbarui status progres pembuatan makanan di aplikasi.
-- **Pembeli (Mahasiswa):** Pengguna yang dapat melihat daftar menu melalui aplikasi, melakukan pemesanan dari jarak jauh, dan memantau status pesanan mereka secara real-time.
+- **Penjual (Pak Sapril/Istri):** Mengelola ketersediaan banyak varian menu dan memantau antrean pesanan yang masuk secara sistematis agar dapat membagi tugas memasak dengan lebih baik.
+- **Pembeli (Mahasiswa):** Melakukan pemesanan dan memantau progres masakan dari meja masing-masing atau dari luar kantin untuk menghindari kerumunan di depan kedai.
 
 ### B. SOP (Standard Operating Procedure) Sistem
-1. **Akses Menu:** Pembeli mengakses aplikasi **EconoMakan** untuk melihat ketersediaan menu pada warung tersebut.
-2. **Input Pesanan:** Pembeli memilih menu, menambahkan catatan pesanan jika diperlukan, dan melakukan konfirmasi pemesanan di aplikasi.
-3. **Penerimaan Pesanan:** Sistem mengirimkan data pesanan ke layar penjual secara otomatis berdasarkan urutan waktu masuk (Metode FIFO - First In First Out).
-4. **Proses Pembuatan:** Penjual memproses pesanan sesuai urutan pada layar dan mengubah status pesanan menjadi "Sedang Dimasak".
-5. **Notifikasi Siap Ambil:** Setelah makanan selesai disiapkan, penjual mengubah status pesanan menjadi "Siap Diambil", yang secara otomatis akan ter-update pada layar perangkat pembeli.
-6. **Pengambilan & Pembayaran:** Pembeli datang ke warung untuk mengambil pesanan dan melakukan transaksi pembayaran (tunai atau QRIS) secara langsung di tempat.
+1. **Pemilihan Menu:** Pembeli mengakses aplikasi EconoMakan untuk melihat daftar menu (Bakso, Nasi Goreng, Katsu, dll) yang tersedia di kedai Bakso Wonogiri.
+2. **Input Pesanan & Lokasi:** Pembeli memilih menu dan menyertakan catatan khusus jika diperlukan.
+3. **Penyusunan Antrean Otomatis:** Sistem menyusun pesanan berdasarkan urutan waktu masuk (FIFO) agar penjual dapat memasak secara teratur meski hanya dikelola oleh dua orang.
+4. **Proses Produksi:** Penjual melihat pesanan di layar dan mengubah status menjadi "Sedang Dimasak".
+5. **Notifikasi Selesai:** Setelah makanan siap, penjual mengubah status di aplikasi. Sistem akan memberikan informasi ke perangkat pembeli bahwa makanan siap diambil atau segera diantarkan.
+6. **Finalisasi & Pembayaran:** Pembeli melakukan pengambilan makanan dan menyelesaikan pembayaran melalui QRIS atau tunai sesuai dengan total yang tertera di aplikasi.
 
 ### C. Use Case
-- *UC-01 Login dan Registrasi:* Proses masuk ke sistem bagi penjual dan pembeli untuk memastikan data pesanan terekam dengan benar.
-- *UC-02 Manajemen Data Menu:* Penjual dapat menambah menu baru, mengupdate harga/deskripsi, atau menonaktifkan menu jika stok habis di aplikasi.
-- *UC-03 Pemesanan Digital:* Pembeli memilih menu dan mengirimkan data pesanan beserta catatan tambahan ke sistem.
-- *UC-04 Manajemen Antrean:* Sistem menyusun daftar pesanan secara otomatis dan menampilkannya pada layar penjual berdasarkan urutan waktu.
-- *UC-05 Update Status Pesanan:* Penjual melakukan pembaruan tahapan pesanan (Contoh: Menyiapkan ke Siap Diambil).
-- *UC-06 Monitoring Status:* Pembeli melihat progres pesanan mereka di perangkat masing-masing hingga muncul status siap untuk diambil.
+- **UC-01 Autentikasi Pengguna:** Login bagi penjual dan pembeli untuk validasi data pemesanan.
+- **UC-02 Manajemen Menu Variatif:** Penjual mengupdate ketersediaan berbagai kategori menu (Minuman, Makanan Berat, Makanan Seduh).
+- **UC-03 Pemesanan Jarak Jauh:** Pembeli mengirimkan data pesanan tanpa harus berdiri mengantre di depan kedai.
+- **UC-04 Manajemen Progres Masakan:** Penjual memperbarui tahapan pengerjaan menu di aplikasi.
+- **UC-05 Notifikasi Pengambilan/Antar:** Sistem menginformasikan pembeli bahwa pesanan telah selesai diproses.
 
 ## 4. Tujuan Proyek
 
