@@ -54,3 +54,8 @@
 - **Lingkup Implementasi:** Khusus digunakan untuk operasional kedai Bakso Wonogiri di Kantin FEB.
 - **Fungsionalitas Utama:** Fokus pada pencatatan antrean dan notifikasi status pesanan (bukan sistem pembayaran terintegrasi pihak ketiga).
 - **Aksesibilitas:** Berbasis web browser agar dapat digunakan oleh berbagai jenis perangkat tanpa instalasi aplikasi tambahan.
+
+## 6. Target Hasil
+- Penurunan tingkat stres penjual dalam mengelola lonjakan pesanan di jam istirahat.
+- Hilangnya kendala miskomunikasi urutan pesanan antara penjual dan pembeli.
+- Tercapainya proses pelayanan yang lebih modern dan profesional bagi unit usaha kecil di lingkungan universitas.
