@@ -42,3 +42,9 @@
 - *UC-04 Manajemen Antrean:* Sistem menyusun daftar pesanan secara otomatis dan menampilkannya pada layar penjual berdasarkan urutan waktu.
 - *UC-05 Update Status Pesanan:* Penjual melakukan pembaruan tahapan pesanan (Contoh: Menyiapkan ke Siap Diambil).
 - *UC-06 Monitoring Status:* Pembeli melihat progres pesanan mereka di perangkat masing-masing hingga muncul status siap untuk diambil.
+
+## 4. Tujuan Proyek
+
+- Menyediakan asisten digital bagi penjual yang memiliki keterbatasan staf agar manajemen pesanan lebih terorganisir.
+- Menggantikan metode pemanggilan manual (teriak) dengan sistem notifikasi yang lebih tenang dan efektif.
+- Meningkatkan volume penjualan melalui fitur pemesanan daring yang dapat diakses mahasiswa sebelum tiba di kantin.
