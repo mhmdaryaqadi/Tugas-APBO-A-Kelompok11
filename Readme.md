@@ -13,12 +13,13 @@
 ---
 
 ## 1. Topik
-**EconoMakan**: Perancangan Sistem Manajemen Antrean dan Pemesanan Digital Berbasis Web (Sistem Pre-Order dan Pick-up) pada Warung Kantin FEB Universitas Pancasila.
+**EconoMakan**: Perancangan Sistem Manajemen Antrean dan Pemesanan Digital Berbasis Web (Sistem Pre-Order dan Pick-up) pada Kedai Bakso Wonogiri Kantin FEB Universitas Pancasila.
 
 ## 2. Problem
-- **Kepadatan Area Warung:** Terjadi penumpukan mahasiswa di depan etalase warung yang menunggu pesanan secara manual, sehingga mengganggu kenyamanan dan mobilitas di area kantin.
-- **Kesalahan Manajemen Pesanan:** Proses pencatatan manual pada jam sibuk sering mengakibatkan pesanan tertukar atau salah urutan antrean, terutama saat terdapat permintaan khusus dari pembeli (seperti tingkat kepedasan atau penyesuaian bahan).
-- **Efisiensi Waktu Mahasiswa:** Mahasiswa kehilangan waktu istirahat yang cukup banyak hanya untuk berdiri mengantre di lokasi, yang berisiko pada keterlambatan masuk ke jam perkuliahan berikutnya.
+- **Keterbatasan Sumber Daya Manusia:** Operasional kedai hanya dikelola oleh dua orang (pemilik dan istri), sehingga proses pelayanan terhambat saat terjadi lonjakan pesanan secara simultan.
+- **Kompleksitas Menu pada Jam Sibuk:** Variasi menu yang beragam (bakso, nasi goreng, kwetiau, katsu) memerlukan waktu pengerjaan yang berbeda-beda, sehingga penjual kesulitan mengatur prioritas urutan pesanan saat jam istirahat mahasiswa.
+- **Metode Pemanggilan Manual:** Saat ini, penjual masih menggunakan cara manual (teriak) atau mencari meja tempat mahasiswa duduk untuk mengantarkan makanan. Hal ini tidak efisien dan sering menimbulkan kebingungan saat kondisi kantin sedang ramai.
+- **Kebutuhan Digitalisasi Pembayaran:** Meski QRIS sudah mendominasi, belum ada sistem yang mengintegrasikan pencatatan transaksi dengan status pesanan.
 
 ## 3. Analisis
 
