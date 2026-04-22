@@ -48,3 +48,9 @@
 - Menyediakan asisten digital bagi penjual yang memiliki keterbatasan staf agar manajemen pesanan lebih terorganisir.
 - Menggantikan metode pemanggilan manual (teriak) dengan sistem notifikasi yang lebih tenang dan efektif.
 - Meningkatkan volume penjualan melalui fitur pemesanan daring yang dapat diakses mahasiswa sebelum tiba di kantin.
+
+## 5. Batasan Sistem (Scope)
+
+- **Lingkup Implementasi:** Khusus digunakan untuk operasional kedai Bakso Wonogiri di Kantin FEB.
+- **Fungsionalitas Utama:** Fokus pada pencatatan antrean dan notifikasi status pesanan (bukan sistem pembayaran terintegrasi pihak ketiga).
+- **Aksesibilitas:** Berbasis web browser agar dapat digunakan oleh berbagai jenis perangkat tanpa instalasi aplikasi tambahan.
