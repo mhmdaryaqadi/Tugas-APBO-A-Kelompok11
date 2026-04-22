@@ -58,3 +58,5 @@
 - Penurunan tingkat stres penjual dalam mengelola lonjakan pesanan di jam istirahat.
 - Hilangnya kendala miskomunikasi urutan pesanan antara penjual dan pembeli.
 - Tercapainya proses pelayanan yang lebih modern dan profesional bagi unit usaha kecil di lingkungan universitas.
+
+Link Video YT: https://youtu.be/Iy0zI39q6hI?si=725uWzFJrmPL2FkI
