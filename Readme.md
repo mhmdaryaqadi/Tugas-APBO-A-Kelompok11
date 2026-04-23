@@ -1,5 +1,5 @@
 # Laporan Analisis Perancangan Berorientasi Objek - Kelas A
-**Dosen Pengampu:** Adi Wahyu Pribadi, S.T., M.T.
+**Dosen Pengampu:** Adi Wahyu Pribadi, S.Si., M.Kom
 
 ---
 
