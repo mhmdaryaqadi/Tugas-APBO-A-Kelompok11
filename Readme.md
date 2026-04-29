@@ -72,9 +72,8 @@ Konsumen mendatangi kedai berdasarkan notifikasi. Pelanggan mengambil pesanan da
 **G. Simpan Data Transaksi (Pemantauan Owner)**
 Setelah pembayaran selesai, data transaksi disimpan di sistem. Owner dapat memantau kegiatan bisnis, meliputi: total pesanan harian dan total estimasi pemasukan.
 
-<img width="5669" height="2491" alt="Manusia Class Inheritance-2026-04-29-074530" src="https://github.com/user-attachments/assets/6980b12f-2b15-49cc-a2d6-b921b6598e99" />
+<img width="5301" height="2596" alt="Manusia Class Inheritance-2026-04-29-130645" src="https://github.com/user-attachments/assets/36e4fe1f-e2da-4ace-a31a-2dfd8da77613" />
 Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelanggan hingga pelaporan pendapatan.
-
 
 ### 6. Analisis Aktor & Use Case
 
@@ -94,3 +93,7 @@ Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelangga
 
 <img width="5502" height="4831" alt="Manusia Class Inheritance-2026-04-29-071059" src="https://github.com/user-attachments/assets/4e056cd8-a645-447e-bdc3-28b1d41bf8ca" />
 Keterangan: Diagram Use Case yang menggambarkan hubungan fungsional antara aktor Pelanggan, Penjual, dan Owner dengan sistem EconoMakan.
+
+---
+
+Link Canva: https://canva.link/dgfeuvcim82kbly
