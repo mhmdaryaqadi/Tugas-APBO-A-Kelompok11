@@ -32,7 +32,7 @@ Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
 5. Bagaimana cara pihak kedai memberitahu kepada pelanggan bahwa pesanannya sudah siap diambil atau diantar?
 6. Jika ada aplikasi digital, kira-kira fitur apa saja yang bisa membantu bisnis Bapak?
 
-####*Bagian 3*
+#### *Bagian 3*
 **P:** Ini pertanyaan keempat, kira-kira di kedai bapak tuh sistem pembayarannya cash doang apa bisa QRIS?
 **S:** Kita ada cash, ada QRIS juga. Kalau dia mau transfer bank juga ada gitu. Tapi biasanya umumnya lebih banyak QRIS ya.
 **P:** Oh QRIS ya? Daripada cash lebih banyak QRIS berarti?
