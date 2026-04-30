@@ -32,6 +32,14 @@ Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
 5. Bagaimana cara pihak kedai memberitahu kepada pelanggan bahwa pesanannya sudah siap diambil atau diantar?
 6. Jika ada aplikasi digital, kira-kira fitur apa saja yang bisa membantu bisnis Bapak?
 
+#### *Bagian 4*
+*P:* Kan kami dari jurusan IT nih, apa ini pertanyaan tambahan ya Pak. Kita tuh kalau misalkan nanti kita disuruh bikin aplikasi tentang ini bapak, kira-kira fitur apa aja yang membantu bisnis bapak nih? Kalau misal ada aplikasi nih, fitur apa aja yang membantu kira-kira?
+*S:* Ya selama ini kan kita masih offline ya. Ya kalau bisa dibantu ya itu, bisa kita penjualan secara online.
+*P:* Salah satunya tadi nih yang cara ngasih tahu kalau pesanannya udah kelar bisa lewat aplikasinya mungkin ya?
+*S:* Iya mungkin seperti itu juga salah satunya. Mungkin kalau kayak di restoran kan dia bunyi ya customer datang, cuma kan ya mungkin kita enggak ngerti kayak gimana itu alatnya atau mungkin terlalu mahal mungkin, sementara kan kita apa... masih kecil lah ya, kalau terlalu mahal enggak ini juga gitu mas.
+*P:* Ya udah gitu aja Pak dari kami Pak, terima kasih waktunya Pak.
+*S:* Iya terima kasih mas.
+
 ### 4. Dokumentasi
 Video wawancara langsung dengan narasumber dapat diakses melalui tautan berikut:
 https://youtu.be/Iy0zI39q6hI?si=lSJEHfITxhOZz33n
