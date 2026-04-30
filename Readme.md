@@ -32,6 +32,20 @@ Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
 5. Bagaimana cara pihak kedai memberitahu kepada pelanggan bahwa pesanannya sudah siap diambil atau diantar?
 6. Jika ada aplikasi digital, kira-kira fitur apa saja yang bisa membantu bisnis Bapak?
 
+#### *Bagian 1*
+### *Transkrip Wawancara: Bakso Wonogiri (Kantin FEB)*
+*Pewawancara (P):* Dengan bapak siapa ini?
+
+*Pak Sapril (S):* Saya dengan Bapak Sapril.
+
+*P:* Bapak Sapril ya. Pemilik kedai apa nih kalau boleh tahu?
+
+*S:* Bakso Wonogiri.
+
+*P:* Bakso Wonogiri ya, di kantin FEB berarti?
+
+*S:* Iya, kantin Fakultas Ekonomi dan Bisnis.
+
 #### *Bagian 2*
 *P:* Kalau boleh tahu tuh di sini ada posisi jabatan apa aja nih di tempat bapak ini?
 
@@ -44,6 +58,7 @@ Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
 *P:* Terus kalau kendala yang biasa dialami oleh bapak dalam urusan bisnis ini apa nih biasanya kendalanya apa?
 
 *S:* Ya kendalanya sih kalau pada jam istirahat kan istirahat semua sekaligus. Nah, yang mesen kan langsung ini (banyak), sementara... nah itu yang paling sulit sih ya ngerjainnya. Karena menu kita kan banyak, ada bakso, ada nasi goreng, kwetiau, katsu. Di situ yang sebenarnya kesulitannya. Tapi ya kita kerjain pelan-pelan, mahasiswa sabar nunggu lah gitu mas.
+
 #### *Bagian 3*
 **P:** Ini pertanyaan keempat, kira-kira di kedai bapak tuh sistem pembayarannya cash doang apa bisa QRIS?
 
