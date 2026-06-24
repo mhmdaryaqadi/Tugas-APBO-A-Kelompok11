@@ -117,6 +117,10 @@ Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh O
 
 *Keterangan: Flowchart alur bisnis EconoMakan (Fase pemesanan hingga pengambilan).*
 
+<img width="1076" height="1878" alt="apbo5 (2)" src="https://github.com/user-attachments/assets/73aeeb9c-7f44-43d3-a0c2-b2eb324bebef" />
+
+*Keterangan: Activity Diagram sistem EconoMakan.*
+
 ### 6. Analisis Aktor & Use Case
 
 **A. Aktor dalam Sistem**
