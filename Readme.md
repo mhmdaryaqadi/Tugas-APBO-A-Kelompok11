@@ -136,4 +136,17 @@ Keterangan: Diagram Use Case yang menggambarkan hubungan fungsional antara aktor
 
 ---
 
+### 7. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)
+
+**A. State Machine Diagram**
+Menggambarkan siklus hidup (perubahan status) dari sebuah objek pesanan secara sekuensial, mulai dari tahap inisialisasi keranjang hingga pesanan selesai diserahkan kepada pelanggan. 
+
+Adapun tahapan status (*state*) pada sistem EconoMakan berjalan dengan alur berikut:
+*   **Keranjang Dibuat:** Objek pesanan terinisialisasi setelah pelanggan memilih menu.
+*   **Menunggu Pembayaran:** Pelanggan melakukan *checkout* dan bersiap menyelesaikan pembayaran.
+*   **Dalam Antrean FIFO:** Ini merupakan titik kontrol utama sistem. Objek pesanan **hanya** akan beralih ke status antrean ini apabila validasi pembayaran (QRIS/Tunai) telah berhasil. Pesanan yang belum lunas tidak akan diproses lebih lanjut.
+*   **Sedang Diproses:** Penjual mulai memasak pesanan sesuai dengan urutan kedatangan data (*First In First Out*).
+*   **Siap Diambil:** Makanan telah selesai dibuat dan dibungkus/disajikan.
+*   **Pesanan Selesai:** Titik akhir (*final state*) di mana pelanggan telah mengambil makanannya dan siklus objek pesanan resmi ditutup.
+
 Link Canva: https://canva.link/dgfeuvcim82kbly
