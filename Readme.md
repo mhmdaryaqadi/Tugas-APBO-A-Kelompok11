@@ -72,6 +72,14 @@ Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
 
 **S:** Biasanya pada saat dia membeli kita nanya dulu duduknya di mana kira-kira. Jadi emang kita antar gitu. Kecuali dia yang minuman ambil sendiri kan atau yang seduh-seduh gitu kan dia nunggu, biasanya kita bikin langsung ambil. Kalau yang kayak ayam goreng, nasi goreng kan kita kerjain dulu, jadi customer ya entar kita antar lah gitu ke tempatnya. Kira-kira di sana entar kan kita teriak, "Nasi goreng!"
 
+#### *Bagian 4*
+*P:* Kan kami dari jurusan IT nih, apa ini pertanyaan tambahan ya Pak. Kita tuh kalau misalkan nanti kita disuruh bikin aplikasi tentang ini bapak, kira-kira fitur apa aja yang membantu bisnis bapak nih? Kalau misal ada aplikasi nih, fitur apa aja yang membantu kira-kira?
+*S:* Ya selama ini kan kita masih offline ya. Ya kalau bisa dibantu ya itu, bisa kita penjualan secara online.
+*P:* Salah satunya tadi nih yang cara ngasih tahu kalau pesanannya udah kelar bisa lewat aplikasinya mungkin ya?
+*S:* Iya mungkin seperti itu juga salah satunya. Mungkin kalau kayak di restoran kan dia bunyi ya customer datang, cuma kan ya mungkin kita enggak ngerti kayak gimana itu alatnya atau mungkin terlalu mahal mungkin, sementara kan kita apa... masih kecil lah ya, kalau terlalu mahal enggak ini juga gitu mas.
+*P:* Ya udah gitu aja Pak dari kami Pak, terima kasih waktunya Pak.
+*S:* Iya terima kasih mas.
+
 ### 4. Dokumentasi
 Video wawancara langsung dengan narasumber dapat diakses melalui tautan berikut:
 https://youtu.be/Iy0zI39q6hI?si=lSJEHfITxhOZz33n
