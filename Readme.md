@@ -118,6 +118,10 @@ Alur interaksi waktu (*lifelines*) direpresentasikan sebagai berikut:
 3.  **Fase Pengerjaan & Paralel Notifikasi:** Database FIFO menampilkan urutan pesanan di layar Penjual. Setiap kali Penjual menekan tombol *update* status ("Sedang Diproses" dan "Siap Diambil"), sistem merespons dengan mengirimkan pesan asinkron berupa notifikasi ke perangkat Pelanggan.
 4.  **Fase Penyelesaian Transaksi:** Pelanggan menunjukkan notifikasi di perangkatnya sebagai bukti pengambilan makanan. Setelah pesanan diserahkan, Penjual menyimpan log penyelesaian transaksi untuk dicatat sebagai pendapatan harian.
 
+<img width="949" height="914" alt="apbo4" src="https://github.com/user-attachments/assets/3f310e4a-8f9c-46cc-a4ce-b36883e7b62c" />
+
+*Keterangan: Sequence Diagram EconoMakan yang merinci pertukaran data secara kronologis dari inisiasi pesanan hingga transaksi selesai.*
+
 ---
 
 Link Canva: https://canva.link/dgfeuvcim82kbly
