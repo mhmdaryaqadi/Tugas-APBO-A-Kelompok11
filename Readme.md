@@ -124,21 +124,28 @@ Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh O
 ### 6. Analisis Aktor & Use Case
 
 **A. Aktor dalam Sistem**
-*   **Pelanggan (Mahasiswa):** Bertugas melakukan pemesanan, memilih menu, mengisi catatan pesanan, memantau status antrean dari jarak jauh, dan melakukan pembayaran di tempat saat pesanan diambil.
-*   **Penjual / Admin:** Bertugas mengelola ketersediaan data menu di aplikasi, memantau daftar pesanan masuk secara berurutan, mengubah status pengerjaan makanan, dan memvalidasi pesanan yang sudah diambil.
-*   **Pemilik (Owner):** Bertugas memantau total transaksi harian, total pemasukan kedai, serta mengelola harga dan penambahan menu baru.
+*   **Pelanggan (Mahasiswa):** Bertugas memilih menu, mengisi catatan pesanan, **melakukan pembayaran di awal transaksi**, memantau status antrean dari jarak jauh, dan mengambil makanan saat pesanan siap.
+*   **Penjual / Admin:** Bertugas mengelola katalog menu, memvalidasi pembayaran pelanggan, memantau daftar antrean masuk, dan memperbarui status pengerjaan masakan.
+*   **Pemilik (Owner):** Bertugas melihat laporan transaksi, melihat total pendapatan kedai, serta melakukan autentikasi sistem.
 
 **B. Daftar Fungsionalitas (Use Case)**
-*   **UC-01 Autentikasi Pengguna:** Login bagi penjual, pelanggan, dan pemilik untuk validasi dan keamanan data transaksi.
-*   **UC-02 Pengelolaan Katalog Menu (Penjual/Owner):** Penjual memperbarui status ketersediaan menu (Aktif/Habis), menambah, atau mengubah detail harga.
-*   **UC-03 Transaksi Pemesanan (Pelanggan):** Pelanggan memilih menu, mengisi detail catatan (kustomisasi), dan mengirimkan pesanan ke sistem.
-*   **UC-04 Manajemen Antrean Berurut (Sistem):** Sistem secara otomatis menerima pesanan dan menampilkannya secara berurutan (*FIFO*) di perangkat penjual.
-*   **UC-05 Pembaruan Status Produksi (Penjual):** Penjual mengubah tahapan status pesanan dari "Sedang Diproses" menjadi "Siap Diambil".
-*   **UC-06 Notifikasi Siap Ambil (Sistem/Pelanggan):** Sistem menampilkan peringatan pembaruan status di layar perangkat pelanggan bahwa pesanan sudah selesai diproses.
-*   **UC-07 Laporan Pendapatan (Owner):** Sistem merangkum seluruh transaksi pesanan yang sudah selesai menjadi laporan penjualan harian untuk dipantau oleh pemilik kedai.
+*   **UC-01 Autentikasi / Login:** Sistem validasi keamanan bagi Penjual, Pelanggan, dan Owner.
+*   **UC-02 Pesan Menu & Catatan:** Pelanggan memilih makanan dan memberikan kustomisasi.
+*   **UC-03 Lakukan Pembayaran:** Wajib dilakukan oleh pelanggan sesaat setelah memesan menu (<<include>> dari proses pesan).
+*   **UC-04 Validasi Pembayaran:** Dilakukan oleh penjual untuk mengonfirmasi dana masuk.
+*   **UC-05 Memantau Antrean Masuk:** Penjual melihat daftar pesanan yang sudah lunas.
+*   **UC-06 Pantau Status Antrean:** Pelanggan melihat status pesanannya.
+*   **UC-07 Update Status Masakan:** Penjual mengubah tahapan status pesanan.
+*   **UC-08 Mengirim Notifikasi:** Sistem otomatis mengirimkan pemberitahuan (<<include>> dari update status).
+*   **UC-09 Menerima Notifikasi Selesai:** Pelanggan mendapat sinyal makanan siap diambil.
+*   **UC-10 Ambil Makanan:** Tahap akhir penyelesaian fisik oleh pelanggan.
+*   **UC-11 Mengelola Katalog Menu:** Penjual mengatur ketersediaan menu dan harga.
+*   **UC-12 Melihat Laporan Transaksi & Pendapatan:** Owner melihat rekapitulasi data penjualan.
 
-<img width="5502" height="4831" alt="Manusia Class Inheritance-2026-04-29-071059" src="https://github.com/user-attachments/assets/4e056cd8-a645-447e-bdc3-28b1d41bf8ca" />
-Keterangan: Diagram Use Case yang menggambarkan hubungan fungsional antara aktor Pelanggan, Penjual, dan Owner dengan sistem EconoMakan.
+<img width="539" height="1080" alt="diagramapbo2" src="https://github.com/user-attachments/assets/d5c1a4de-5738-4926-9db1-9e2f56cd1a81" />
+
+*Keterangan: Diagram Use Case EconoMakan yang menggambarkan interaksi fungsional antara aktor Pelanggan, Penjual, dan Owner.*
+
 
 ---
 
