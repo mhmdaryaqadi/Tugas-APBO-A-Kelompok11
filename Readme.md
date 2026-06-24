@@ -74,10 +74,15 @@ Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
 
 #### *Bagian 4*
 *P:* Kan kami dari jurusan IT nih, apa ini pertanyaan tambahan ya Pak. Kita tuh kalau misalkan nanti kita disuruh bikin aplikasi tentang ini bapak, kira-kira fitur apa aja yang membantu bisnis bapak nih? Kalau misal ada aplikasi nih, fitur apa aja yang membantu kira-kira?
+
 *S:* Ya selama ini kan kita masih offline ya. Ya kalau bisa dibantu ya itu, bisa kita penjualan secara online.
+
 *P:* Salah satunya tadi nih yang cara ngasih tahu kalau pesanannya udah kelar bisa lewat aplikasinya mungkin ya?
+
 *S:* Iya mungkin seperti itu juga salah satunya. Mungkin kalau kayak di restoran kan dia bunyi ya customer datang, cuma kan ya mungkin kita enggak ngerti kayak gimana itu alatnya atau mungkin terlalu mahal mungkin, sementara kan kita apa... masih kecil lah ya, kalau terlalu mahal enggak ini juga gitu mas.
+
 *P:* Ya udah gitu aja Pak dari kami Pak, terima kasih waktunya Pak.
+
 *S:* Iya terima kasih mas.
 
 ### 4. Dokumentasi
@@ -111,6 +116,10 @@ Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh O
 <img width="5301" height="2596" alt="Manusia Class Inheritance-2026-04-29-130645" src="https://github.com/user-attachments/assets/36e4fe1f-e2da-4ace-a31a-2dfd8da77613" />
 
 *Keterangan: Flowchart alur bisnis EconoMakan (Fase pemesanan hingga pengambilan).*
+
+<img width="1076" height="1878" alt="apbo5 (2)" src="https://github.com/user-attachments/assets/73aeeb9c-7f44-43d3-a0c2-b2eb324bebef" />
+
+*Keterangan: Activity Diagram sistem EconoMakan.*
 
 ### 6. Analisis Aktor & Use Case
 
