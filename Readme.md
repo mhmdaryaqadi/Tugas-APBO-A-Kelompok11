@@ -1,6 +1,6 @@
 # Tugas Analisis Perancangan Berorientasi Objek - A
 
-**Dosen Pengampu :** Adi Wahyu Pribadi, S.T., M.T.
+**Dosen Pengampu :** Adi Wahyu Pribadi, S.Si., M.Kom
 
 **KELOMPOK 11:**
 1. Muhammad Arya Alqadi - 4524210058
