@@ -77,43 +77,32 @@ Video wawancara langsung dengan narasumber dapat diakses melalui tautan berikut:
 https://youtu.be/Iy0zI39q6hI?si=lSJEHfITxhOZz33n
 
 ### 5. Alur Bisnis Sistem EconoMakan
-Sistem EconoMakan dibuat untuk merapikan transaksi pemesanan agar lebih terstruktur dan mengurangi miskomunikasi antara mahasiswa dengan penjual.
+Sistem EconoMakan dibuat untuk merapikan transaksi pemesanan agar lebih terstruktur, mencegah antrean fisik yang menumpuk, serta menghindari pesanan palsu (ghost orders) dengan sistem pembayaran di awal.
 
-**A. Pemesan Melakukan Order**
-Transaksi dimulai dengan mahasiswa memesan langsung melalui aplikasi web EconoMakan. Pelanggan dapat memilih kategori layanan menu yang disediakan, seperti:
-*   Makanan Kuah (Bakso, dll)
-*   Makanan Masak/Goreng (Nasi Goreng, Katsu, Kwetiau)
-*   Minuman (Es Teh, Jeruk, dll)
-*   *Catatan Khusus:* Pelanggan wajib mencantumkan instruksi (misal: "pedas", "jangan pakai seledri") untuk mencegah miskomunikasi.
+**A. Pemesan Melakukan Order & Checkout**
+Transaksi dimulai dengan mahasiswa memesan langsung melalui aplikasi web EconoMakan. Pelanggan memilih menu dan wajib mencantumkan instruksi khusus pada catatan pesanan.
 
-**B. Input Identitas dan Data Pesanan**
-Setelah pesanan dikonfirmasi, sistem otomatis mencatat data pemesan yang meliputi:
-*   Nama Akun/Pemesan
-*   Detail menu dan jumlah porsi
-*   Waktu (jam & menit) pemesanan masuk
-*   Catatan kustomisasi pesanan
+**B. Proses Pembayaran (Di Awal)**
+Setelah mengonfirmasi pesanan, pelanggan wajib langsung melakukan pembayaran (melalui QRIS atau Tunai). Pemesanan tidak akan diproses ke antrean dapur jika pembayaran belum dilakukan dan divalidasi.
 
-**C. Pesanan Memasuki Daftar Antrean**
-Data pesanan otomatis masuk ke layar penjual. Antrean ini dibedakan secara sistematis berdasarkan metode FIFO (*First In First Out*) agar penjual tahu pesanan mana yang masuk lebih dulu dan harus diprioritaskan.
+**C. Pesanan Memasuki Daftar Antrean (Database FIFO)**
+Data pesanan yang pembayarannya sudah divalidasi lunas otomatis masuk ke layar penjual dengan sistem FIFO (First In First Out).
 
 **D. Proses Pengerjaan Masakan**
-Penjual melakukan pengerjaan makanan berdasarkan layar antrean. Penjual juga akan melakukan *Update Status* pada sistem:
-*   *Sedang Diproses:* Penjual mulai memasak hidangan.
-*   *Siap Diambil:* Makanan sudah selesai dibungkus atau disajikan.
+Penjual mulai memasak dan melakukan pembaruan (Update Status) pada sistem secara bertahap, mulai dari "Sedang Diproses" hingga "Siap Diambil".
 
 **E. Pengiriman Notifikasi ke Pelanggan**
-Apabila status diubah menjadi "Siap Diambil", sistem langsung mengirimkan notifikasi *real-time* ke perangkat pelanggan. Tujuannya adalah mencegah kerumunan di depan kedai dan menghilangkan metode teriak.
+Apabila status diubah, sistem otomatis mengirimkan notifikasi real-time ke perangkat pelanggan untuk menghilangkan metode panggil teriak.
 
-**F. Pengambilan & Pembayaran**
-Konsumen mendatangi kedai berdasarkan notifikasi. Pelanggan mengambil pesanan dan menyelesaikan pembayaran dengan cara:
-*   QRIS (Metode paling sering digunakan)
-*   Kas (Tunai)
+**F. Pengambilan Makanan**
+Konsumen mendatangi kedai berdasarkan notifikasi. Karena pembayaran sudah diselesaikan di awal, pelanggan cukup mengambil pesanannya saja.
 
 **G. Simpan Data Transaksi (Pemantauan Owner)**
-Setelah pembayaran selesai, data transaksi disimpan di sistem. Owner dapat memantau kegiatan bisnis, meliputi: total pesanan harian dan total estimasi pemasukan.
+Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh Owner sebagai total pendapatan harian.
 
 <img width="5301" height="2596" alt="Manusia Class Inheritance-2026-04-29-130645" src="https://github.com/user-attachments/assets/36e4fe1f-e2da-4ace-a31a-2dfd8da77613" />
-Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelanggan hingga pelaporan pendapatan.
+
+*Keterangan: Flowchart alur bisnis EconoMakan (Fase pemesanan hingga pengambilan).*
 
 ### 6. Analisis Aktor & Use Case
 
