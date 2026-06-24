@@ -121,9 +121,10 @@ Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelangga
 *   **UC-11 Mengelola Katalog Menu:** Penjual mengatur ketersediaan menu dan harga.
 *   **UC-12 Melihat Laporan Transaksi & Pendapatan:** Owner melihat rekapitulasi data penjualan.
 
+<img width="539" height="1080" alt="diagramapbo2" src="https://github.com/user-attachments/assets/d5c1a4de-5738-4926-9db1-9e2f56cd1a81" />
 
-<img width="5502" height="4831" alt="Manusia Class Inheritance-2026-04-29-071059" src="https://github.com/user-attachments/assets/4e056cd8-a645-447e-bdc3-28b1d41bf8ca" />
-Keterangan: Diagram Use Case yang menggambarkan hubungan fungsional antara aktor Pelanggan, Penjual, dan Owner dengan sistem EconoMakan.
+*Keterangan: Diagram Use Case EconoMakan yang menggambarkan interaksi fungsional antara aktor Pelanggan, Penjual, dan Owner.*
+
 
 ---
 
