@@ -109,4 +109,15 @@ Keterangan: Diagram Use Case yang menggambarkan hubungan fungsional antara aktor
 
 ---
 
+**B. Sequence Diagram**
+Menjabarkan interaksi pengiriman pesan (alur waktu operasional) secara *real-time* antar aktor dan objek di dalam sistem—yaitu Pelanggan, Sistem EconoMakan, Database FIFO, dan Penjual—dalam satu skenario transaksi yang utuh.
+
+Alur interaksi waktu (*lifelines*) direpresentasikan sebagai berikut:
+1.  **Fase Pemesanan & Eksekusi Pembayaran:** Pelanggan berinteraksi dengan antarmuka sistem untuk memilih menu, menginput catatan khusus, dan menekan tombol *checkout*. Sistem merespons dengan memunculkan rincian total harga beserta QRIS, yang kemudian langsung dibayar oleh pelanggan.
+2.  **Fase Perekaman Data Berurut:** Sistem meneruskan data pesanan yang berstatus lunas tersebut ke dalam Database FIFO, lalu menerima konfirmasi balik bahwa data sukses tersimpan.
+3.  **Fase Pengerjaan & Paralel Notifikasi:** Database FIFO menampilkan urutan pesanan di layar Penjual. Setiap kali Penjual menekan tombol *update* status ("Sedang Diproses" dan "Siap Diambil"), sistem merespons dengan mengirimkan pesan asinkron berupa notifikasi ke perangkat Pelanggan.
+4.  **Fase Penyelesaian Transaksi:** Pelanggan menunjukkan notifikasi di perangkatnya sebagai bukti pengambilan makanan. Setelah pesanan diserahkan, Penjual menyimpan log penyelesaian transaksi untuk dicatat sebagai pendapatan harian.
+
+---
+
 Link Canva: https://canva.link/dgfeuvcim82kbly
