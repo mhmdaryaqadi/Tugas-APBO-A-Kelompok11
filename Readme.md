@@ -146,6 +146,20 @@ Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh O
 
 *Keterangan: Diagram Use Case EconoMakan yang menggambarkan interaksi fungsional antara aktor Pelanggan, Penjual, dan Owner.*
 
+**C. Perancangan Struktur Kelas (Class Diagram)**
+
+Class Diagram menggambarkan struktur statis serta arsitektur sistem EconoMakan dengan memetakan hubungan antar-kelas (*class*), atribut, metode (*method*), serta enkapsulasi objek yang akan diimplementasikan ke dalam kode program.
+
+<img width="2641" height="902" alt="class diagram" src="https://github.com/user-attachments/assets/f237fdc0-3ab1-4289-908d-2f8fec046d9f" />
+
+*Keterangan: Class Diagram sistem EconoMakan yang menunjukkan struktur data, pewarisan, dan relasi antar-komponen sistem.*
+
+Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
+*   **Penerapan Konsep OOP (Inheritance):** Kelas `Pengguna` bertindak sebagai *abstract class* (kelas induk) yang menyimpan atribut umum seperti `id`, `nama`, `email`, dan `kataSandi`. Kelas `Pelanggan`, `Penjual`, dan `Owner` merupakan *subclass* (kelas turunan) yang mewarisi fungsi `login()` dan `logout()`, namun memiliki metode spesifik sesuai dengan hak akses masing-masing.
+*   **Keterikatan Kuat Pembayaran di Awal (Composition):** Relasi antara kelas `Pesanan` dengan kelas `Pembayaran` dan `DetailPesanan` menggunakan hubungan *Composition* (simbol belah ketupat hitam penuh). Hal ini menegaskan aturan bisnis sistem bahwa objek `Pembayaran` dan `DetailPesanan` tidak dapat berdiri sendiri atau tercipta tanpa adanya objek `Pesanan` yang sah dan lunas di awal transaksi.
+*   **Struktur Data Antrean Berurut (`DatabaseFIFO`):** Kelas `DatabaseFIFO` dirancang sebagai pengendali data antrean dapur dengan metode utama `simpanPesananLunas()` dan `ambilAntreanTeratas()`. Kelas ini menjamin bahwa setiap pesanan lunas akan diproses oleh penjual secara adil berdasarkan urutan kronologis waktu masuk.
+*   **Fleksibilitas Kustomisasi Menu (`DetailPesanan`):** Kelas `DetailPesanan` membawa atribut `catatanKhusus` dan `jumlahPorsi` yang merujuk langsung ke kelas `Menu`. Struktur ini memastikan instruksi kustomisasi dari pelanggan (seperti tingkat kepedasan atau variasi porsi) tersimpan secara presisi di dalam database dan tampil di layar penjual.
+
 ---
 
 ### 7. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)
