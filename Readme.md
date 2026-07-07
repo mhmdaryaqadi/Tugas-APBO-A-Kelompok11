@@ -97,7 +97,8 @@ Konsumen mendatangi kedai berdasarkan notifikasi. Pelanggan mengambil pesanan da
 **G. Simpan Data Transaksi (Pemantauan Owner)**
 Setelah pembayaran selesai, data transaksi disimpan di sistem. Owner dapat memantau kegiatan bisnis, meliputi: total pesanan harian dan total estimasi pemasukan.
 
-<img width="5301" height="2596" alt="Manusia Class Inheritance-2026-04-29-130645" src="https://github.com/user-attachments/assets/36e4fe1f-e2da-4ace-a31a-2dfd8da77613" />
+<img width="813" height="3046" alt="flowchartapbo" src="https://github.com/user-attachments/assets/fa7b5490-d5f2-4c6c-b1e7-a3d8648f63b5" />
+
 Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelanggan hingga pelaporan pendapatan.
 
 ### 6. Analisis Aktor & Use Case
