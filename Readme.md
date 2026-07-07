@@ -161,7 +161,7 @@ Adapun tahapan status (*state*) pada sistem EconoMakan berjalan dengan alur beri
 *   **Siap Diambil:** Makanan telah selesai dibuat dan dibungkus/disajikan.
 *   **Pesanan Selesai:** Titik akhir (*final state*) di mana pelanggan telah mengambil makanannya dan siklus objek pesanan resmi ditutup.
 
-<img width="241" height="823" alt="apbo3" src="https://github.com/user-attachments/assets/92d8c92b-17ab-4b6d-b520-d25a50fd6e42" />
+<img width="1157" height="1123" alt="stateapbo" src="https://github.com/user-attachments/assets/627a2106-f9d0-4b2e-9852-92a57d91efd9" />
 
 *Keterangan: Transisi status pemesanan EconoMakan dengan penerapan sistem bayar di awal (Anti-Ghost Order).*
   
