@@ -113,13 +113,9 @@ Konsumen mendatangi kedai berdasarkan notifikasi. Karena pembayaran sudah disele
 **G. Simpan Data Transaksi (Pemantauan Owner)**
 Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh Owner sebagai total pendapatan harian.
 
-<img width="5301" height="2596" alt="Manusia Class Inheritance-2026-04-29-130645" src="https://github.com/user-attachments/assets/36e4fe1f-e2da-4ace-a31a-2dfd8da77613" />
+<img width="813" height="3046" alt="flowchartapbo" src="https://github.com/user-attachments/assets/fa7b5490-d5f2-4c6c-b1e7-a3d8648f63b5" />
 
-*Keterangan: Flowchart alur bisnis EconoMakan (Fase pemesanan hingga pengambilan).*
-
-<img width="1076" height="1878" alt="apbo5 (2)" src="https://github.com/user-attachments/assets/73aeeb9c-7f44-43d3-a0c2-b2eb324bebef" />
-
-*Keterangan: Activity Diagram sistem EconoMakan.*
+Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelanggan hingga pelaporan pendapatan.
 
 ### 6. Analisis Aktor & Use Case
 
