@@ -169,7 +169,7 @@ Diagram ini menggambarkan siklus hidup (perubahan nilai atribut `status`) dari o
 *   **`READY_FOR_PICKUP`:** Status beralih ke `'Ready'` ketika penjual mengeksekusi *method* `ubahStatusSiapDiambil()`, yang secara otomatis memicu *event* `KirimNotifikasi(Siap)`. Di status ini, sistem mengunci alur: jika *method* `validasiBuktiAntrean()` menghasilkan kondisi `[Tidak Cocok]`, status berputar kembali ke dirinya sendiri (`tolakPenyerahan`).
 *   **`COMPLETED`:** Titik akhir (*final state*) objek pesanan. Status resmi berubah menjadi `'Completed'` hanya jika `validasiBuktiAntrean()` menghasilkan kondisi `[Cocok]`. Sistem kemudian menutup siklus hidup objek dengan menjalankan query *insert* ke `LaporanPendapatan`.
 
-<img width="241" height="823" alt="apbo3" src="https://github.com/user-attachments/assets/92d8c92b-17ab-4b6d-b520-d25a50fd6e42" />
+<img width="1157" height="1123" alt="stateapbo" src="https://github.com/user-attachments/assets/627a2106-f9d0-4b2e-9852-92a57d91efd9" />
 
 *Keterangan: Transisi status pemesanan EconoMakan dengan penerapan sistem bayar di awal (Anti-Ghost Order).*
   
