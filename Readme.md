@@ -163,31 +163,30 @@ Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
 
 ---
 
-### 7. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)
+### **7. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)**
 
-**A. State Machine Diagram**
-Menggambarkan siklus hidup (perubahan status) dari sebuah objek pesanan secara sekuensial, mulai dari tahap inisialisasi keranjang hingga pesanan selesai diserahkan kepada pelanggan. 
+#### **A. State Machine Diagram**
+**Poin Analisis Transisi Status:**
+Diagram ini menggambarkan siklus hidup (perubahan nilai atribut `status`) dari objek data `Pesanan` secara sekuensial berdasarkan *event* atau *method* yang dieksekusi oleh sistem perangkat lunak, bebas dari unsur aksi fisik manusia:
 
-Adapun tahapan status (*state*) pada sistem EconoMakan berjalan dengan alur berikut:
-*   **Keranjang Dibuat:** Objek pesanan terinisialisasi setelah pelanggan memilih menu.
-*   **Menunggu Pembayaran:** Pelanggan melakukan *checkout* dan bersiap menyelesaikan pembayaran.
-*   **Dalam Antrean FIFO:** Ini merupakan titik kontrol utama sistem. Objek pesanan **hanya** akan beralih ke status antrean ini apabila validasi pembayaran (QRIS/Tunai) telah berhasil. Pesanan yang belum lunas tidak akan diproses lebih lanjut.
-*   **Sedang Diproses:** Penjual mulai memasak pesanan sesuai dengan urutan kedatangan data (*First In First Out*).
-*   **Siap Diambil:** Makanan telah selesai dibuat dan dibungkus/disajikan.
-*   **Pesanan Selesai:** Titik akhir (*final state*) di mana pelanggan telah mengambil makanannya dan siklus objek pesanan resmi ditutup.
+*   **`PENDING`:** Status awal saat data pesanan terinisialisasi melalui *method* `userMelakukanCheckout()`. Sistem menahan pesanan di *state* ini (`Menunggu_Pembayaran`) selama proses transaksi *invoice* QRIS digenerate. Jika gagal, status dihancurkan melalui `callbackPaymentFailed()`.
+*   **`IN_QUEUE`:** Objek pesanan otomatis beralih ke status ini hanya jika menerima *event* `callbackPaymentSuccess()`. Sistem melakukan instansiasi objek dan memasukkan ID pesanan ke dalam *array* `DatabaseFIFO`.
+*   **`PROCESSING`:** Status berubah menjadi `'Processing'` saat penjual mengeksekusi *method* `ubahStatusDiproses()`. Pada tahapan ini, sistem memicu *asynchronous event* `KirimNotifikasi(Dimasak)`.
+*   **`READY_FOR_PICKUP`:** Status beralih ke `'Ready'` ketika penjual mengeksekusi *method* `ubahStatusSiapDiambil()`, yang secara otomatis memicu *event* `KirimNotifikasi(Siap)`. Di status ini, sistem mengunci alur: jika *method* `validasiBuktiAntrean()` menghasilkan kondisi `[Tidak Cocok]`, status berputar kembali ke dirinya sendiri (`tolakPenyerahan`).
+*   **`COMPLETED`:** Titik akhir (*final state*) objek pesanan. Status resmi berubah menjadi `'Completed'` hanya jika `validasiBuktiAntrean()` menghasilkan kondisi `[Cocok]`. Sistem kemudian menutup siklus hidup objek dengan menjalankan query *insert* ke `LaporanPendapatan`.
 
 <img width="241" height="823" alt="apbo3" src="https://github.com/user-attachments/assets/92d8c92b-17ab-4b6d-b520-d25a50fd6e42" />
 
 *Keterangan: Transisi status pemesanan EconoMakan dengan penerapan sistem bayar di awal (Anti-Ghost Order).*
   
-**B. Sequence Diagram**
-Menjabarkan interaksi pengiriman pesan (alur waktu operasional) secara *real-time* antar aktor dan objek di dalam sistem—yaitu Pelanggan, Sistem EconoMakan, Database FIFO, dan Penjual—dalam satu skenario transaksi yang utuh.
+#### **B. Sequence Diagram**
+**Poin Analisis Pertukaran Data (Lifelines):**
+Sequence Diagram merinci interaksi pengiriman pesan (*message call*) secara kronologis dari atas ke bawah antar komponen arsitektur sistem perangkat lunak:
 
-Alur interaksi waktu (*lifelines*) direpresentasikan sebagai berikut:
-1.  **Fase Pemesanan & Eksekusi Pembayaran:** Pelanggan berinteraksi dengan antarmuka sistem untuk memilih menu, menginput catatan khusus, dan menekan tombol *checkout*. Sistem merespons dengan memunculkan rincian total harga beserta QRIS, yang kemudian langsung dibayar oleh pelanggan.
-2.  **Fase Perekaman Data Berurut:** Sistem meneruskan data pesanan yang berstatus lunas tersebut ke dalam Database FIFO, lalu menerima konfirmasi balik bahwa data sukses tersimpan.
-3.  **Fase Pengerjaan & Paralel Notifikasi:** Database FIFO menampilkan urutan pesanan di layar Penjual. Setiap kali Penjual menekan tombol *update* status ("Sedang Diproses" dan "Siap Diambil"), sistem merespons dengan mengirimkan pesan asinkron berupa notifikasi ke perangkat Pelanggan.
-4.  **Fase Penyelesaian Transaksi:** Pelanggan menunjukkan notifikasi di perangkatnya sebagai bukti pengambilan makanan. Setelah pesanan diserahkan, Penjual menyimpan log penyelesaian transaksi untuk dicatat sebagai pendapatan harian.
+*   **Fase Pemesanan & Pembayaran QRIS:** `Pelanggan` mengirimkan pesan `memilihMenu()` ke `KatalogUI`, yang diteruskan sebagai `reqCheckout()` ke `OrderController`. Controller melakukan operasi internal `kalkulasiTotalHarga()` dan meminta *invoice* ke `PaymentGateway` via `requestQRIS()`. Sistem memotong alur menggunakan blok `alt` jika pembayaran `[Gagal / Timeout]`.
+*   **Fase Antrean FIFO:** Jika pembayaran `[Sukses / Lunas]`, `OrderController` melakukan `instansiasiObjek()` ke kelas entitas `Pesanan` dan menyimpan ID datanya ke `DatabaseFIFO` melalui fungsi `insertIDPesanan()`.
+*   **Fase Perubahan State & Notifikasi Paralel:** `Penjual` melakukan interaksi dengan mengirim pesan `updateStatus('Diproses')` dan `updateStatus('Siap Diambil')` melalui `KatalogUI` ke `OrderController`. Setiap perubahan nilai ini langsung dikirim ke objek `Pesanan` lewat `setStatus()` dan memicu *method* internal `memicuEventKirimNotifikasi()` untuk mengirimkan respon balik berupa pesan *asynchronous* ke layar `Pelanggan`.
+*   **Fase Validasi Akhir & Log Transaksi:** Penjual mengirimkan data bukti melalui `memvalidasiBuktiNomorAntrean()`. Sistem memprosesnya di dalam blok `loop` dan `alt`. Jika `[Tidak Cocok]`, sistem memicu `menolakAksiPenyerahan()`. Jika `[Cocok]`, objek `Pesanan` diubah menjadi `'Selesai'`, dan data keuangan disimpan ke tabel `LaporanPendapatan` melalui fungsi `insertLaporanPendapatan()`.
 
 <img width="949" height="914" alt="apbo4" src="https://github.com/user-attachments/assets/3f310e4a-8f9c-46cc-a4ce-b36883e7b62c" />
 
