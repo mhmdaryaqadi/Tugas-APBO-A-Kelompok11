@@ -155,12 +155,6 @@ Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
 
 *Keterangan: Class Diagram sistem EconoMakan yang menunjukkan struktur data, pewarisan, dan relasi antar-komponen sistem.*
 
-Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
-*   **Penerapan Konsep OOP (Inheritance):** Kelas `Pengguna` bertindak sebagai *abstract class* (kelas induk) yang menyimpan atribut umum seperti `id`, `nama`, `email`, dan `kataSandi`. Kelas `Pelanggan`, `Penjual`, dan `Owner` merupakan *subclass* (kelas turunan) yang mewarisi fungsi `login()` dan `logout()`, namun memiliki metode spesifik sesuai dengan hak akses masing-masing.
-*   **Keterikatan Kuat Pembayaran di Awal (Composition):** Relasi antara kelas `Pesanan` dengan kelas `Pembayaran` dan `DetailPesanan` menggunakan hubungan *Composition* (simbol belah ketupat hitam penuh). Hal ini menegaskan aturan bisnis sistem bahwa objek `Pembayaran` dan `DetailPesanan` tidak dapat berdiri sendiri atau tercipta tanpa adanya objek `Pesanan` yang sah dan lunas di awal transaksi.
-*   **Struktur Data Antrean Berurut (`DatabaseFIFO`):** Kelas `DatabaseFIFO` dirancang sebagai pengendali data antrean dapur dengan metode utama `simpanPesananLunas()` dan `ambilAntreanTeratas()`. Kelas ini menjamin bahwa setiap pesanan lunas akan diproses oleh penjual secara adil berdasarkan urutan kronologis waktu masuk.
-*   **Fleksibilitas Kustomisasi Menu (`DetailPesanan`):** Kelas `DetailPesanan` membawa atribut `catatanKhusus` dan `jumlahPorsi` yang merujuk langsung ke kelas `Menu`. Struktur ini memastikan instruksi kustomisasi dari pelanggan (seperti tingkat kepedasan atau variasi porsi) tersimpan secara presisi di dalam database dan tampil di layar penjual.
-
 ---
 
 ### **7. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)**
