@@ -113,34 +113,79 @@ Konsumen mendatangi kedai berdasarkan notifikasi. Karena pembayaran sudah disele
 **G. Simpan Data Transaksi (Pemantauan Owner)**
 Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh Owner sebagai total pendapatan harian.
 
-<img width="5301" height="2596" alt="Manusia Class Inheritance-2026-04-29-130645" src="https://github.com/user-attachments/assets/36e4fe1f-e2da-4ace-a31a-2dfd8da77613" />
+<img width="813" height="3046" alt="flowchartapbo" src="https://github.com/user-attachments/assets/fa7b5490-d5f2-4c6c-b1e7-a3d8648f63b5" />
 
-*Keterangan: Flowchart alur bisnis EconoMakan (Fase pemesanan hingga pengambilan).*
-
-<img width="1076" height="1878" alt="apbo5 (2)" src="https://github.com/user-attachments/assets/73aeeb9c-7f44-43d3-a0c2-b2eb324bebef" />
-
-*Keterangan: Activity Diagram sistem EconoMakan.*
+Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelanggan hingga pelaporan pendapatan.
 
 ### 6. Analisis Aktor & Use Case
 
 **A. Aktor dalam Sistem**
-*   **Pelanggan (Mahasiswa):** Bertugas melakukan pemesanan, memilih menu, mengisi catatan pesanan, memantau status antrean dari jarak jauh, dan melakukan pembayaran di tempat saat pesanan diambil.
-*   **Penjual / Admin:** Bertugas mengelola ketersediaan data menu di aplikasi, memantau daftar pesanan masuk secara berurutan, mengubah status pengerjaan makanan, dan memvalidasi pesanan yang sudah diambil.
-*   **Pemilik (Owner):** Bertugas memantau total transaksi harian, total pemasukan kedai, serta mengelola harga dan penambahan menu baru.
+*   **Pelanggan (Mahasiswa):** Bertugas memilih menu, mengisi catatan pesanan, **melakukan pembayaran di awal transaksi**, memantau status antrean dari jarak jauh, dan mengambil makanan saat pesanan siap.
+*   **Penjual / Admin:** Bertugas mengelola katalog menu, memvalidasi pembayaran pelanggan, memantau daftar antrean masuk, dan memperbarui status pengerjaan masakan.
+*   **Pemilik (Owner):** Bertugas melihat laporan transaksi, melihat total pendapatan kedai, serta melakukan autentikasi sistem.
 
-**B. Daftar Fungsionalitas (Use Case)**
-*   **UC-01 Autentikasi Pengguna:** Login bagi penjual, pelanggan, dan pemilik untuk validasi dan keamanan data transaksi.
-*   **UC-02 Pengelolaan Katalog Menu (Penjual/Owner):** Penjual memperbarui status ketersediaan menu (Aktif/Habis), menambah, atau mengubah detail harga.
-*   **UC-03 Transaksi Pemesanan (Pelanggan):** Pelanggan memilih menu, mengisi detail catatan (kustomisasi), dan mengirimkan pesanan ke sistem.
-*   **UC-04 Manajemen Antrean Berurut (Sistem):** Sistem secara otomatis menerima pesanan dan menampilkannya secara berurutan (*FIFO*) di perangkat penjual.
-*   **UC-05 Pembaruan Status Produksi (Penjual):** Penjual mengubah tahapan status pesanan dari "Sedang Diproses" menjadi "Siap Diambil".
-*   **UC-06 Notifikasi Siap Ambil (Sistem/Pelanggan):** Sistem menampilkan peringatan pembaruan status di layar perangkat pelanggan bahwa pesanan sudah selesai diproses.
-*   **UC-07 Laporan Pendapatan (Owner):** Sistem merangkum seluruh transaksi pesanan yang sudah selesai menjadi laporan penjualan harian untuk dipantau oleh pemilik kedai.
+#### **B. Daftar Fungsionalitas (Use Case)**
+Fungsionalitas sistem telah disesuaikan murni berdasarkan interaksi perangkat lunak, membuang interaksi fisik manusia. Terdapat 10 Use Case utama:
+
+*   **UC-01 Autentikasi / Login:** Sistem validasi keamanan bagi Penjual, Pelanggan, dan Owner.
+*   **UC-02 Pesan Menu & Catatan:** Fungsionalitas antarmuka bagi Pelanggan untuk memilih makanan dan memberikan kustomisasi.
+*   **UC-03 Lakukan Pembayaran QRIS:** Sistem *payment gateway* wajib yang dipicu (`<<include>>`) langsung setelah proses pemesanan menu.
+*   **UC-04 Validasi Callback Pembayaran:** Sistem secara otomatis maupun manual oleh Penjual memvalidasi status dana masuk.
+*   **UC-05 Memantau Antrean FIFO:** Fitur bagi Penjual untuk melihat daftar pesanan yang sudah berstatus lunas.
+*   **UC-06 Update Status Pesanan:** Fungsionalitas Penjual untuk memajukan tahapan status (*State*) objek pesanan di database.
+*   **UC-07 Kirim Notifikasi Sistem:** Sistem secara *backend* mengirimkan pemberitahuan (`<<include>>`) ke perangkat pelanggan akibat adanya *trigger* dari perubahan status pesanan.
+*   **UC-08 Validasi Bukti Antrean Pelanggan:** Sistem verifikasi akhir oleh Penjual untuk mencocokkan nomor antrean digital pelanggan sebelum mengubah status transaksi menjadi selesai.
+*   **UC-09 Mengelola Katalog Menu:** Akses bagi Penjual untuk mengatur ketersediaan menu.
+*   **UC-10 Melihat Laporan Pendapatan:** Fitur rekapitulasi data penjualan khusus untuk hak akses Owner.
 
 <img width="507" height="961" alt="usecaseapbo (1)" src="https://github.com/user-attachments/assets/b837bd11-a8f2-4bc4-bff5-d2fab17a5cce" />
 
-Keterangan: Diagram Use Case yang menggambarkan hubungan fungsional antara aktor Pelanggan, Penjual, dan Owner dengan sistem EconoMakan.
+*Keterangan: Diagram Use Case EconoMakan yang menggambarkan interaksi fungsional antara aktor Pelanggan, Penjual, dan Owner.*
+
+#### **C. Perancangan Struktur Kelas (Class Diagram)**
+Class Diagram menggambarkan struktur statis serta arsitektur sistem EconoMakan dengan memetakan hubungan antar-kelas, atribut, dan metode (*method*). Perancangan ini menggunakan pendekatan *Boundary-Control-Entity* (MVC) agar siap diimplementasikan ke dalam kode program yang terstruktur.
+
+Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
+*   **Layer Antarmuka (`KatalogUI`):** Bertindak sebagai *Boundary Class* yang mengatur tampilan antarmuka (UI). Kelas ini memiliki metode *void* seperti `menampilkanKatalogMenu()` dan `tampilkanPesanError()` yang berfungsi menampilkan data tanpa melakukan manipulasi logika inti.
+*   **Layer Pengendali (`OrderController`):** Bertindak sebagai otak sistem (*Control Class*). Kelas ini menjadi pusat *routing* yang menerima *request* dari UI, seperti `reqCheckout()`, lalu melakukan kalkulasi logika (`kalkulasiTotalHarga()`), dan mengeksekusi perubahan data (`updateStatus()`).
+*   **Layer Entitas & Basis Data (`Pesanan`, `DatabaseFIFO`, `LaporanPendapatan`):** Bertindak sebagai representasi tabel database (*Entity Class*). Kelas `OrderController` mengelola objek `Pesanan` secara langsung, serta mengirimkan log data (seperti ID antrean dan total pendapatan) ke `DatabaseFIFO` dan `LaporanPendapatan`.
+*   **Integrasi Pihak Ketiga (`PaymentGateway`):** Memisahkan fungsi eksternal ke dalam kelas tersendiri untuk menangani siklus pembuatan *invoice* (`requestQRIS()`) and pengecekan status bayar, menjaga agar logika inti EconoMakan tetap independen.
+
+<img width="1725" height="726" alt="classapbo" src="https://github.com/user-attachments/assets/134d721f-b63c-4cd2-b46d-fd4f3272a71b" />
+
+*Keterangan: Class Diagram sistem EconoMakan yang menunjukkan struktur data, pewarisan, dan relasi antar-komponen sistem.*
 
 ---
 
+### **7. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)**
+
+#### **A. State Machine Diagram**
+**Poin Analisis Transisi Status:**
+Diagram ini menggambarkan siklus hidup (perubahan nilai atribut `status`) dari objek data `Pesanan` secara sekuensial berdasarkan *event* atau *method* yang dieksekusi oleh sistem perangkat lunak, bebas dari unsur aksi fisik manusia:
+
+*   **`PENDING`:** Status awal saat data pesanan terinisialisasi melalui *method* `userMelakukanCheckout()`. Sistem menahan pesanan di *state* ini (`Menunggu_Pembayaran`) selama proses transaksi *invoice* QRIS digenerate. Jika gagal, status dihancurkan melalui `callbackPaymentFailed()`.
+*   **`IN_QUEUE`:** Objek pesanan otomatis beralih ke status ini hanya jika menerima *event* `callbackPaymentSuccess()`. Sistem melakukan instansiasi objek dan memasukkan ID pesanan ke dalam *array* `DatabaseFIFO`.
+*   **`PROCESSING`:** Status berubah menjadi `'Processing'` saat penjual mengeksekusi *method* `ubahStatusDiproses()`. Pada tahapan ini, sistem memicu *asynchronous event* `KirimNotifikasi(Dimasak)`.
+*   **`READY_FOR_PICKUP`:** Status beralih ke `'Ready'` ketika penjual mengeksekusi *method* `ubahStatusSiapDiambil()`, yang secara otomatis memicu *event* `KirimNotifikasi(Siap)`. Di status ini, sistem mengunci alur: jika *method* `validasiBuktiAntrean()` menghasilkan kondisi `[Tidak Cocok]`, status berputar kembali ke dirinya sendiri (`tolakPenyerahan`).
+*   **`COMPLETED`:** Titik akhir (*final state*) objek pesanan. Status resmi berubah menjadi `'Completed'` hanya jika `validasiBuktiAntrean()` menghasilkan kondisi `[Cocok]`. Sistem kemudian menutup siklus hidup objek dengan menjalankan query *insert* ke `LaporanPendapatan`.
+
+<img width="1157" height="1123" alt="stateapbo" src="https://github.com/user-attachments/assets/627a2106-f9d0-4b2e-9852-92a57d91efd9" />
+
+*Keterangan: Transisi status pemesanan EconoMakan dengan penerapan sistem bayar di awal (Anti-Ghost Order).*
+  
+#### **B. Sequence Diagram**
+**Poin Analisis Pertukaran Data (Lifelines):**
+Sequence Diagram merinci interaksi pengiriman pesan (*message call*) secara kronologis dari atas ke bawah antar komponen arsitektur sistem perangkat lunak:
+
+*   **Fase Pemesanan & Pembayaran QRIS:** `Pelanggan` mengirimkan pesan `memilihMenu()` ke `KatalogUI`, yang diteruskan sebagai `reqCheckout()` ke `OrderController`. Controller melakukan operasi internal `kalkulasiTotalHarga()` dan meminta *invoice* ke `PaymentGateway` via `requestQRIS()`. Sistem memotong alur menggunakan blok `alt` jika pembayaran `[Gagal / Timeout]`.
+*   **Fase Antrean FIFO:** Jika pembayaran `[Sukses / Lunas]`, `OrderController` melakukan `instansiasiObjek()` ke kelas entitas `Pesanan` dan menyimpan ID datanya ke `DatabaseFIFO` melalui fungsi `insertIDPesanan()`.
+*   **Fase Perubahan State & Notifikasi Paralel:** `Penjual` melakukan interaksi dengan mengirim pesan `updateStatus('Diproses')` dan `updateStatus('Siap Diambil')` melalui `KatalogUI` ke `OrderController`. Setiap perubahan nilai ini langsung dikirim ke objek `Pesanan` lewat `setStatus()` dan memicu *method* internal `memicuEventKirimNotifikasi()` untuk mengirimkan respon balik berupa pesan *asynchronous* ke layar `Pelanggan`.
+*   **Fase Validasi Akhir & Log Transaksi:** Penjual mengirimkan data bukti melalui `memvalidasiBuktiNomorAntrean()`. Sistem memprosesnya di dalam blok `loop` dan `alt`. Jika `[Tidak Cocok]`, sistem memicu `menolakAksiPenyerahan()`. Jika `[Cocok]`, objek `Pesanan` diubah menjadi `'Selesai'`, dan data keuangan disimpan ke tabel `LaporanPendapatan` melalui fungsi `insertLaporanPendapatan()`.
+
+<img width="1503" height="1781" alt="sequenceapbo" src="https://github.com/user-attachments/assets/1323ec94-d9ba-4325-9408-3af12ee0f334" />
+
+*Keterangan: Sequence Diagram EconoMakan yang merinci pertukaran data secara kronologis dari inisiasi pesanan hingga transaksi selesai.*
+
+---
+ 
 Link Canva: https://canva.link/dgfeuvcim82kbly
