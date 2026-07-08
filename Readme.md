@@ -182,7 +182,7 @@ Sequence Diagram merinci interaksi pengiriman pesan (*message call*) secara kron
 *   **Fase Perubahan State & Notifikasi Paralel:** `Penjual` melakukan interaksi dengan mengirim pesan `updateStatus('Diproses')` dan `updateStatus('Siap Diambil')` melalui `KatalogUI` ke `OrderController`. Setiap perubahan nilai ini langsung dikirim ke objek `Pesanan` lewat `setStatus()` dan memicu *method* internal `memicuEventKirimNotifikasi()` untuk mengirimkan respon balik berupa pesan *asynchronous* ke layar `Pelanggan`.
 *   **Fase Validasi Akhir & Log Transaksi:** Penjual mengirimkan data bukti melalui `memvalidasiBuktiNomorAntrean()`. Sistem memprosesnya di dalam blok `loop` dan `alt`. Jika `[Tidak Cocok]`, sistem memicu `menolakAksiPenyerahan()`. Jika `[Cocok]`, objek `Pesanan` diubah menjadi `'Selesai'`, dan data keuangan disimpan ke tabel `LaporanPendapatan` melalui fungsi `insertLaporanPendapatan()`.
 
-<img width="949" height="914" alt="apbo4" src="https://github.com/user-attachments/assets/3f310e4a-8f9c-46cc-a4ce-b36883e7b62c" />
+<img width="1503" height="1781" alt="sequenceapbo" src="https://github.com/user-attachments/assets/1323ec94-d9ba-4325-9408-3af12ee0f334" />
 
 *Keterangan: Sequence Diagram EconoMakan yang merinci pertukaran data secara kronologis dari inisiasi pesanan hingga transaksi selesai.*
 
