@@ -137,7 +137,8 @@ Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh O
 *   **UC-06 Notifikasi Siap Ambil (Sistem/Pelanggan):** Sistem menampilkan peringatan pembaruan status di layar perangkat pelanggan bahwa pesanan sudah selesai diproses.
 *   **UC-07 Laporan Pendapatan (Owner):** Sistem merangkum seluruh transaksi pesanan yang sudah selesai menjadi laporan penjualan harian untuk dipantau oleh pemilik kedai.
 
-<img width="5502" height="4831" alt="Manusia Class Inheritance-2026-04-29-071059" src="https://github.com/user-attachments/assets/4e056cd8-a645-447e-bdc3-28b1d41bf8ca" />
+<img width="507" height="961" alt="usecaseapbo (1)" src="https://github.com/user-attachments/assets/b837bd11-a8f2-4bc4-bff5-d2fab17a5cce" />
+
 Keterangan: Diagram Use Case yang menggambarkan hubungan fungsional antara aktor Pelanggan, Penjual, dan Owner dengan sistem EconoMakan.
 
 ---
