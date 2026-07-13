@@ -138,7 +138,7 @@ Fungsionalitas sistem telah disesuaikan murni berdasarkan interaksi perangkat lu
 *   **UC-09 Mengelola Katalog Menu:** Akses bagi Penjual untuk mengatur ketersediaan menu.
 *   **UC-10 Melihat Laporan Pendapatan:** Fitur rekapitulasi data penjualan khusus untuk hak akses Owner.
 
-<img width="539" height="1080" alt="diagramapbo2" src="https://github.com/user-attachments/assets/d5c1a4de-5738-4926-9db1-9e2f56cd1a81" />
+<img width="507" height="961" alt="usecaseapbo (1)" src="https://github.com/user-attachments/assets/b837bd11-a8f2-4bc4-bff5-d2fab17a5cce" />
 
 *Keterangan: Diagram Use Case EconoMakan yang menggambarkan interaksi fungsional antara aktor Pelanggan, Penjual, dan Owner.*
 
@@ -151,7 +151,7 @@ Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
 *   **Layer Entitas & Basis Data (`Pesanan`, `DatabaseFIFO`, `LaporanPendapatan`):** Bertindak sebagai representasi tabel database (*Entity Class*). Kelas `OrderController` mengelola objek `Pesanan` secara langsung, serta mengirimkan log data (seperti ID antrean dan total pendapatan) ke `DatabaseFIFO` dan `LaporanPendapatan`.
 *   **Integrasi Pihak Ketiga (`PaymentGateway`):** Memisahkan fungsi eksternal ke dalam kelas tersendiri untuk menangani siklus pembuatan *invoice* (`requestQRIS()`) and pengecekan status bayar, menjaga agar logika inti EconoMakan tetap independen.
 
-<img width="2641" height="902" alt="class diagram" src="https://github.com/user-attachments/assets/f237fdc0-3ab1-4289-908d-2f8fec046d9f" />
+<img width="1725" height="726" alt="classapbo" src="https://github.com/user-attachments/assets/134d721f-b63c-4cd2-b46d-fd4f3272a71b" />
 
 *Keterangan: Class Diagram sistem EconoMakan yang menunjukkan struktur data, pewarisan, dan relasi antar-komponen sistem.*
 
@@ -169,7 +169,7 @@ Diagram ini menggambarkan siklus hidup (perubahan nilai atribut `status`) dari o
 *   **`READY_FOR_PICKUP`:** Status beralih ke `'Ready'` ketika penjual mengeksekusi *method* `ubahStatusSiapDiambil()`, yang secara otomatis memicu *event* `KirimNotifikasi(Siap)`. Di status ini, sistem mengunci alur: jika *method* `validasiBuktiAntrean()` menghasilkan kondisi `[Tidak Cocok]`, status berputar kembali ke dirinya sendiri (`tolakPenyerahan`).
 *   **`COMPLETED`:** Titik akhir (*final state*) objek pesanan. Status resmi berubah menjadi `'Completed'` hanya jika `validasiBuktiAntrean()` menghasilkan kondisi `[Cocok]`. Sistem kemudian menutup siklus hidup objek dengan menjalankan query *insert* ke `LaporanPendapatan`.
 
-<img width="241" height="823" alt="apbo3" src="https://github.com/user-attachments/assets/92d8c92b-17ab-4b6d-b520-d25a50fd6e42" />
+<img width="1157" height="1123" alt="stateapbo" src="https://github.com/user-attachments/assets/627a2106-f9d0-4b2e-9852-92a57d91efd9" />
 
 *Keterangan: Transisi status pemesanan EconoMakan dengan penerapan sistem bayar di awal (Anti-Ghost Order).*
   
@@ -182,7 +182,7 @@ Sequence Diagram merinci interaksi pengiriman pesan (*message call*) secara kron
 *   **Fase Perubahan State & Notifikasi Paralel:** `Penjual` melakukan interaksi dengan mengirim pesan `updateStatus('Diproses')` dan `updateStatus('Siap Diambil')` melalui `KatalogUI` ke `OrderController`. Setiap perubahan nilai ini langsung dikirim ke objek `Pesanan` lewat `setStatus()` dan memicu *method* internal `memicuEventKirimNotifikasi()` untuk mengirimkan respon balik berupa pesan *asynchronous* ke layar `Pelanggan`.
 *   **Fase Validasi Akhir & Log Transaksi:** Penjual mengirimkan data bukti melalui `memvalidasiBuktiNomorAntrean()`. Sistem memprosesnya di dalam blok `loop` dan `alt`. Jika `[Tidak Cocok]`, sistem memicu `menolakAksiPenyerahan()`. Jika `[Cocok]`, objek `Pesanan` diubah menjadi `'Selesai'`, dan data keuangan disimpan ke tabel `LaporanPendapatan` melalui fungsi `insertLaporanPendapatan()`.
 
-<img width="949" height="914" alt="apbo4" src="https://github.com/user-attachments/assets/3f310e4a-8f9c-46cc-a4ce-b36883e7b62c" />
+<img width="1503" height="1781" alt="sequenceapbo" src="https://github.com/user-attachments/assets/1323ec94-d9ba-4325-9408-3af12ee0f334" />
 
 *Keterangan: Sequence Diagram EconoMakan yang merinci pertukaran data secara kronologis dari inisiasi pesanan hingga transaksi selesai.*
 
