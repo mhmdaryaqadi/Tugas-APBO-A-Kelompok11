@@ -1,13 +1,41 @@
-# Tugas Analisis Perancangan Berorientasi Objek - A
+<div align="center">
 
-**Dosen Pengampu :** Adi Wahyu Pribadi, S.Si., M.Kom
+# LAPORAN TUGAS BESAR
+## MATA KULIAH: ANALISIS PERANCANGAN BERORIENTASI OBJEK
 
-**KELOMPOK 11:**
-1. Muhammad Arya Alqadi - 4524210058
-2. Akbar Rais Fadilla - 4524210007
-3. Abdurrahman - 4524210003
-4. Khoiril Chandra Kurniawan - 4524210049
-5. Farash Adipati Mursalin - 4524210036
+<br>
+
+### RANCANG BANGUN SISTEM MANAJEMEN ANTREAN DAN PEMESANAN DIGITAL BERBASIS WEB
+## "ECONOMAKAN"
+### STUDI KASUS: KEDAI BAKSO WONOGIRI, KANTIN FEB UNIVERSITAS PANCASILA
+
+<br>
+
+<img width="470" height="351" alt="image" src="https://github.com/user-attachments/assets/071a26bb-b0e8-410e-868b-fce1184ecc7d" />
+
+<br>
+
+### Disusun Oleh Kelompok 11:
+
+| Nama Anggota | NPM |
+| :--- | :--- |
+| Muhammad Arya Alqadi | 4524210058 |
+| Akbar Rais Fadilla | 4524210007 |
+| Abdurrahman | 4524210003 |
+| Khoiril Chandra Kurniawan | 4524210049 |
+| Farash Adipati Mursalin | 4524210036 |
+
+<br>
+
+**Dosen Pengampu:** Adi Wahyu Pribadi, S.Si., M.Kom
+
+<br>
+
+## PROGRAM STUDI TEKNIK INFORMATIKA
+## FAKULTAS TEKNIK UNIVERSITAS PANCASILA
+## 2026
+
+</div>
 
 ---
 
@@ -85,9 +113,13 @@ Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
 
 *S:* Iya terima kasih mas.
 
-### 4. Dokumentasi
-Video wawancara langsung dengan narasumber dapat diakses melalui tautan berikut:
-https://youtu.be/Iy0zI39q6hI?si=lSJEHfITxhOZz33n
+### 4. Dokumentasi & Presentasi Proyek
+Seluruh rangkaian pembuktian data lapangan, proses wawancara narasumber, hingga pemaparan arsitektur sistem EconoMakan oleh Kelompok 11 dapat diakses melalui tautan media digital berikut:
+
+*   **Video Wawancara Lapangan (Narasumber: Bapak Sapril):**
+    https://youtu.be/Iy0zI39q6hI?si=lSJEHfITxhOZz33n
+*   **Video Presentasi (Kelompok 11):**
+    https://youtu.be/rzZVO4qy74s
 
 ### 5. Alur Bisnis Sistem EconoMakan
 Sistem EconoMakan dibuat untuk merapikan transaksi pemesanan agar lebih terstruktur, mencegah antrean fisik yang menumpuk, serta menghindari pesanan palsu (ghost orders) dengan sistem pembayaran di awal.
@@ -115,18 +147,18 @@ Setelah pesanan diambil, data transaksi otomatis tersimpan untuk dipantau oleh O
 
 <img width="813" height="3046" alt="flowchartapbo" src="https://github.com/user-attachments/assets/fa7b5490-d5f2-4c6c-b1e7-a3d8648f63b5" />
 
-Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelanggan hingga pelaporan pendapatan.
+*Keterangan: Visualisasi alur bisnis sistem EconoMakan dari proses input pelanggan hingga pelaporan pendapatan.*
 
-### 6. Analisis Aktor & Use Case
+### 6. Analisis Aktor & Kebutuhan Fungsional
 
-**A. Aktor dalam Sistem**
-*   **Pelanggan (Mahasiswa):** Bertugas memilih menu, mengisi catatan pesanan, **melakukan pembayaran di awal transaksi**, memantau status antrean dari jarak jauh, dan mengambil makanan saat pesanan siap.
+**A. Analisis Aktor Sistem**
+Perancangan sistem EconoMakan membagi hak akses dan tanggung jawab pengguna ke dalam 3 peran (aktor) utama guna menjamin keamanan data dan efisiensi operasional kedai:
+*   **Pelanggan (Mahasiswa):** Bertugas memilih menu, mengisi catatan pesanan, melakukan pembayaran di awal transaksi, memantau status antrean dari jarak jauh, dan mengambil makanan saat pesanan siap.
 *   **Penjual / Admin:** Bertugas mengelola katalog menu, memvalidasi pembayaran pelanggan, memantau daftar antrean masuk, dan memperbarui status pengerjaan masakan.
-*   **Pemilik (Owner):** Bertugas melihat laporan transaksi, melihat total pendapatan kedai, serta melakukan autentikasi sistem.
+*   **Pemilik (Owner):** Bertugas melihat laporan transaksi, melihat total pendapatan kedai, serta melakukan autentikasi sistem secara independen.
 
-#### **B. Daftar Fungsionalitas (Use Case)**
+**B. Daftar Fungsionalitas (Use Case Diagram)**
 Fungsionalitas sistem telah disesuaikan murni berdasarkan interaksi perangkat lunak, membuang interaksi fisik manusia. Terdapat 10 Use Case utama:
-
 *   **UC-01 Autentikasi / Login:** Sistem validasi keamanan bagi Penjual, Pelanggan, dan Owner.
 *   **UC-02 Pesan Menu & Catatan:** Fungsionalitas antarmuka bagi Pelanggan untuk memilih makanan dan memberikan kustomisasi.
 *   **UC-03 Lakukan Pembayaran QRIS:** Sistem *payment gateway* wajib yang dipicu (`<<include>>`) langsung setelah proses pemesanan menu.
@@ -142,7 +174,7 @@ Fungsionalitas sistem telah disesuaikan murni berdasarkan interaksi perangkat lu
 
 *Keterangan: Diagram Use Case EconoMakan yang menggambarkan interaksi fungsional antara aktor Pelanggan, Penjual, dan Owner.*
 
-#### **C. Perancangan Struktur Kelas (Class Diagram)**
+### 7. Perancangan Struktur Kelas (Class Diagram)
 Class Diagram menggambarkan struktur statis serta arsitektur sistem EconoMakan dengan memetakan hubungan antar-kelas, atribut, dan metode (*method*). Perancangan ini menggunakan pendekatan *Boundary-Control-Entity* (MVC) agar siap diimplementasikan ke dalam kode program yang terstruktur.
 
 Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
@@ -153,16 +185,12 @@ Adapun rincian arsitektur kelas pada sistem EconoMakan adalah sebagai berikut:
 
 <img width="1725" height="726" alt="classapbo" src="https://github.com/user-attachments/assets/134d721f-b63c-4cd2-b46d-fd4f3272a71b" />
 
-*Keterangan: Class Diagram sistem EconoMakan yang menunjukkan struktur data, pewarisan, dan relasi antar-komponen sistem.*
+*Keterangan: Class Diagram sistem EconoMakan yang menunjukkan struktur data arsitektur MVC, komponen tipe data, dan relasi logika antar-kelas.*
 
----
+### 8. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)
 
-### **7. Perancangan Interaksi & Perilaku Sistem (Behavioral Diagrams)**
-
-#### **A. State Machine Diagram**
-**Poin Analisis Transisi Status:**
+**A. State Machine Diagram**
 Diagram ini menggambarkan siklus hidup (perubahan nilai atribut `status`) dari objek data `Pesanan` secara sekuensial berdasarkan *event* atau *method* yang dieksekusi oleh sistem perangkat lunak, bebas dari unsur aksi fisik manusia:
-
 *   **`PENDING`:** Status awal saat data pesanan terinisialisasi melalui *method* `userMelakukanCheckout()`. Sistem menahan pesanan di *state* ini (`Menunggu_Pembayaran`) selama proses transaksi *invoice* QRIS digenerate. Jika gagal, status dihancurkan melalui `callbackPaymentFailed()`.
 *   **`IN_QUEUE`:** Objek pesanan otomatis beralih ke status ini hanya jika menerima *event* `callbackPaymentSuccess()`. Sistem melakukan instansiasi objek dan memasukkan ID pesanan ke dalam *array* `DatabaseFIFO`.
 *   **`PROCESSING`:** Status berubah menjadi `'Processing'` saat penjual mengeksekusi *method* `ubahStatusDiproses()`. Pada tahapan ini, sistem memicu *asynchronous event* `KirimNotifikasi(Dimasak)`.
@@ -173,13 +201,11 @@ Diagram ini menggambarkan siklus hidup (perubahan nilai atribut `status`) dari o
 
 *Keterangan: Transisi status pemesanan EconoMakan dengan penerapan sistem bayar di awal (Anti-Ghost Order).*
   
-#### **B. Sequence Diagram**
-**Poin Analisis Pertukaran Data (Lifelines):**
+**B. Sequence Diagram**
 Sequence Diagram merinci interaksi pengiriman pesan (*message call*) secara kronologis dari atas ke bawah antar komponen arsitektur sistem perangkat lunak:
-
-*   **Fase Pemesanan & Pembayaran QRIS:** `Pelanggan` mengirimkan pesan `memilihMenu()` ke `KatalogUI`, yang diteruskan sebagai `reqCheckout()` ke `OrderController`. Controller melakukan operasi internal `kalkulasiTotalHarga()` dan meminta *invoice* ke `PaymentGateway` via `requestQRIS()`. Sistem memotong alur menggunakan blok `alt` jika pembayaran `[Gagal / Timeout]`.
+*   **Fase Pemesanan & Pembayaran QRIS:** `Pelanggan` mengirimkan pesan `memilihMenu()` ke `KatalogUI`, yang diteruskan sebagai `reqCheckout()` ke `OrderController`. Controller melakukan operasi internal `kalkulasiTotalHarga()` and meminta *invoice* ke `PaymentGateway` via `requestQRIS()`. Sistem memotong alur menggunakan blok `alt` jika pembayaran `[Gagal / Timeout]`.
 *   **Fase Antrean FIFO:** Jika pembayaran `[Sukses / Lunas]`, `OrderController` melakukan `instansiasiObjek()` ke kelas entitas `Pesanan` dan menyimpan ID datanya ke `DatabaseFIFO` melalui fungsi `insertIDPesanan()`.
-*   **Fase Perubahan State & Notifikasi Paralel:** `Penjual` melakukan interaksi dengan mengirim pesan `updateStatus('Diproses')` dan `updateStatus('Siap Diambil')` melalui `KatalogUI` ke `OrderController`. Setiap perubahan nilai ini langsung dikirim ke objek `Pesanan` lewat `setStatus()` dan memicu *method* internal `memicuEventKirimNotifikasi()` untuk mengirimkan respon balik berupa pesan *asynchronous* ke layar `Pelanggan`.
+*   **Fase Perubahan State & Notifikasi Paralel:** `Penjual` melakukan interaksi dengan mengirim pesan `updateStatus('Diproses')` and `updateStatus('Siap Diambil')` melalui `KatalogUI` ke `OrderController`. Setiap perubahan nilai ini langsung dikirim ke objek `Pesanan` lewat `setStatus()` dan memicu *method* internal `memicuEventKirimNotifikasi()` untuk mengirimkan respon balik berupa pesan *asynchronous* ke layar `Pelanggan`.
 *   **Fase Validasi Akhir & Log Transaksi:** Penjual mengirimkan data bukti melalui `memvalidasiBuktiNomorAntrean()`. Sistem memprosesnya di dalam blok `loop` dan `alt`. Jika `[Tidak Cocok]`, sistem memicu `menolakAksiPenyerahan()`. Jika `[Cocok]`, objek `Pesanan` diubah menjadi `'Selesai'`, dan data keuangan disimpan ke tabel `LaporanPendapatan` melalui fungsi `insertLaporanPendapatan()`.
 
 <img width="1503" height="1781" alt="sequenceapbo" src="https://github.com/user-attachments/assets/1323ec94-d9ba-4325-9408-3af12ee0f334" />
@@ -187,5 +213,58 @@ Sequence Diagram merinci interaksi pengiriman pesan (*message call*) secara kron
 *Keterangan: Sequence Diagram EconoMakan yang merinci pertukaran data secara kronologis dari inisiasi pesanan hingga transaksi selesai.*
 
 ---
- 
-Link Canva: https://canva.link/dgfeuvcim82kbly
+
+### 9. Perancangan Antarmuka Aplikasi (Web Wireframe)
+Perancangan antarmuka (*user interface*) sistem EconoMakan dirancang menggunakan pendekatan *Responsive Web Design* dengan representasi *blueprint (low-fidelity)* monokromatik. Penggunaan tanda kotak bersilang (`[X]`) berfungsi sebagai *placeholder* aset visual untuk memastikan fokus utama perancangan terletak pada kematangan fungsionalitas dan alur interaksi data, sebelum masuk ke dalam tahap penulisan kode program (*framework development*). 
+
+Berikut merupakan pemetaan modul antarmuka berdasarkan peran aktor sistem:
+
+#### A. Sisi Pelanggan (Mahasiswa)
+
+1. **Halaman Otentikasi & Seleksi Akses**
+   Antarmuka awal yang memfasilitasi gerbang masuk pengguna ke dalam sistem. Menyediakan fitur *multirole selection* (Pelanggan, Penjual, Owner) berbasis *radio button* untuk membagi token otentikasi sesi secara presisi.
+   
+   <img width="2200" height="1480" alt="Buat Login" src="https://github.com/user-attachments/assets/732daca3-5389-4888-bf3f-23b7c3f87c8e" />
+   
+   *Keterangan: Antarmuka form login multi-aktor terpusat.*
+
+2. **Halaman Katalog & Detail Pemesanan**
+   Halaman utama mahasiswa untuk melakukan transaksi. Memuat kartu daftar menu, informasi harga, tombol aksi manipulasi keranjang belanja, ringkasan transaksi, serta kolom teks dinamis (*Text Area*) untuk menangani input catatan kustomisasi menu langsung ke basis data.
+   
+   <img width="2200" height="1812" alt="catalog" src="https://github.com/user-attachments/assets/f5a1acc9-17ac-4c13-ab9d-e29594914539" />
+   
+   *Keterangan: Tampilan katalog menu dinamis beserta modul ringkasan pesanan dan instruksi khusus.*
+
+3. **Halaman Transaksi Invoice QRIS**
+   Antarmuka *payment gateway* wajib di awal sesi *checkout*. Halaman ini memuat ID invoice unik, kalkulasi total biaya, tombol unduh berkas gambar, serta *placeholder status box* yang menahan alur transaksi selama menanti proses validasi lunas dari server.
+   
+   <img width="2200" height="1480" alt="Buat Pembayaran" src="https://github.com/user-attachments/assets/1f18187d-4e18-4d81-8b61-173828163908" />
+   
+   *Keterangan: Modul invoice pembayaran QRIS otomatis (Anti-Ghost Order).*
+
+4. **Halaman Lacak Status Antrean**
+   Halaman monitor jarak jauh bagi mahasiswa setelah melakukan pembayaran. Menampilkan visualisasi garis waktu (*timeline tracker status*) secara vertikal untuk melacak perpindahan nilai atribut objek data dari status `In Queue`, `Processing` (Sedang Dimasak), hingga `Ready` secara *real-time*.
+   
+   <img width="2200" height="1480" alt="Buat Liat antrian" src="https://github.com/user-attachments/assets/52c30454-41ad-4c23-a165-ec8f3df9bb82" />
+   
+   *Keterangan: Layar lacak estimasi waktu tunggu dan pergerakan status pesanan secara real-time.*
+
+#### B. Sisi Penjual (Admin Dapur) & Pemilik (Owner)
+
+1. **Halaman Dashboard Dapur Penjual (FIFO Monitor)**
+   Antarmuka khusus panel penjual menggunakan struktur navigasi samping (*sidebar navigation panel*). Berfungsi menampilkan tumpukan data antrean pesanan masuk secara kronologis berdasarkan *timestamp* waktu lunas (FIFO), dilengkapi tombol kendali transisi status objek dapur.
+   
+   <img width="2200" height="1687" alt="penjual" src="https://github.com/user-attachments/assets/c8d55007-b706-4fad-8336-96bc5ca3db23" />
+   
+   *Keterangan: Dashboard kendali produksi dapur penjual berbasis urutan First In First Out.*
+
+2. **Halaman Statistik Finansial & Log Transaksi Owner**
+   Antarmuka eksklusif manajerial bagi pemilik untuk memantau metrik performa bisnis kedai secara mandiri. Menyajikan rangkuman omzet harian, total volume transaksi, menu terlaris, visualisasi grafik pendapatan mingguan, serta tabel log riwayat transaksi lunas yang dapat dicetak.
+   
+   <img width="2200" height="1532" alt="owner" src="https://github.com/user-attachments/assets/2f202635-da93-4ca8-8570-fe758fd819e1" />
+   
+   *Keterangan: Dashboard pelaporan otomatis rekapitulasi data keuangan harian bagi Owner.*
+
+---
+   
+Link Canva Presentasi: https://canva.link/3q2coyvmxysshb4
