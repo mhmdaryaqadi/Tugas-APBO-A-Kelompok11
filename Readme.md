@@ -57,10 +57,11 @@ Berdasarkan hasil observasi dan wawancara di lapangan, berikut adalah analisis m
 | **Rekapitulasi Manual** | Tidak ada pencatatan transaksi digital yang terpusat. | Proses rekap data penjualan harian lambat dan rawan ketidakakuratan finansial. |
 
 #### B. Studi Literatur
-Untuk mendukung validitas desain solusi sistem EconoMakan, dilakukan kajian kritis terhadap 3 sumber ilmiah berikut:
-1. **Penerapan Algoritma First In First Out (FIFO):** Menurut penelitian oleh Handoko et al. (2023) dalam *Jurnal Rekayasa Sistem Perangkat Lunak* (URL/DOI: `https://doi.org/10.31227/osf.io/rspl.v4i2`), pemanfaatan antrean berbasis database FIFO terbukti meningkatkan keadilan distribusi pelayanan dan meminimalkan waktu tunggu rata-rata pelanggan secara signifikan.
-2. **Mitigasi Ghost Orders Lewat Payment Gateway:** Studi dari Lestari & Wijaya (2024) pada *Journal of Information Systems Development* (URL/DOI: `https://jsd.up.ac.id/index.php/jsd/article/view/882`) menunjukkan bahwa integrasi skema pembayaran di awal menggunakan QRIS secara mutlak menghilangkan risiko pesanan palsu (*ghost orders*) dan mengamankan arus kas operasional UMKM kuliner.
-3. **Arsitektur Model-View-Controller (MVC):** Riset oleh Pratama (2022) dalam *International Journal of Computer Science* (URL/DOI: `https://ijcs.org/papers/vol19/no3/ijcs_19_3_05.pdf`) membuktikan bahwa pemisahan lapisan menggunakan arsitektur *Boundary-Control-Entity* (MVC) membuat basis kode aplikasi web menjadi modular, meminimalkan redundansi data, serta mempercepat siklus *maintenance backend*.
+Untuk mendukung validitas desain solusi sistem EconoMakan serta memenuhi kriteria pemodelan ilmiah, dilakukan kajian kritis terhadap 3 sumber ilmiah berikut:
+
+1. **Penerapan Algoritma First In First Out (FIFO):** Menurut riset mengenai optimalisasi antrean pemesanan pada *Jurnal Mahasiswa Teknik Informatika (JATI)* (URL: `https://ejournal.itn.ac.id/jati/article/view/18246`), implementasi antrean berbasis metode FIFO terbukti secara signifikan mampu meningkatkan efisiensi waktu tunggu dan keadilan pelayanan bagi pelanggan, mencegah penumpukan fisik di area transaksi.
+2. **Mitigasi Kendala Keuangan & Operasional UMKM:** Kajian dari *Jurnal Riset Pendidikan Ekonomi (JRPE)* (URL: `https://ejournal.unikama.ac.id/index.php/jrpe/article/view/9940`) memaparkan pentingnya efisiensi manajemen operasional dan finansial pada unit usaha makanan. Penerapan sistem digitalisasi transaksi sangat krusial dalam menekan kerugian operasional akibat keterbatasan SDM penjual.
+3. **Arsitektur Sistem Berorientasi Objek dengan Rancang Bangun Web:** Penelitian dalam *Jurnal Komputer dan Informatika (JKI)* (URL: `https://rumahjurnal.bigtechnology.id/index.php/jki/article/view/5`) membuktikan bahwa perancangan sistem informasi berbasis web menggunakan analisis berorientasi objek menghasilkan struktur kode yang modular, mempermudah pelacakan status data secara transparan, serta mempercepat proses *maintenance* jangka panjang.
 
 ### 3. Pertanyaan Wawancara
 Narasumber: Bapak Sapril (Owner Kedai Bakso Wonogiri)
