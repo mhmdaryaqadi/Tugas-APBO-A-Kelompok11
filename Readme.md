@@ -187,5 +187,59 @@ Sequence Diagram merinci interaksi pengiriman pesan (*message call*) secara kron
 *Keterangan: Sequence Diagram EconoMakan yang merinci pertukaran data secara kronologis dari inisiasi pesanan hingga transaksi selesai.*
 
 ---
- 
+
+### 8. Perancangan Antarmuka Aplikasi (Web Wireframe)
+
+Perancangan antarmuka (*user interface*) sistem EconoMakan dirancang menggunakan pendekatan *Responsive Web Design* dengan representasi *blueprint (low-fidelity)* monokromatik. Penggunaan tanda kotak bersilang (`[X]`) berfungsi sebagai *placeholder* aset visual untuk memastikan fokus utama perancangan terletak pada kematangan fungsionalitas dan alur interaksi data, sebelum masuk ke dalam tahap penulisan kode program (*framework development*). 
+
+Berikut merupakan pemetaan modul antarmuka berdasarkan peran aktor sistem:
+
+#### A. Sisi Pelanggan (Mahasiswa)
+
+1. **Halaman Otentikasi & Seleksi Akses**
+   Antarmuka awal yang memfasilitasi gerbang masuk pengguna ke dalam sistem. Menyediakan fitur *multirole selection* (Pelanggan, Penjual, Owner) berbasis *radio button* untuk membagi token otentikasi sesi secara presisi.
+   
+   <img width="2200" height="1480" alt="Buat Login" src="https://github.com/user-attachments/assets/732daca3-5389-4888-bf3f-23b7c3f87c8e" />
+   
+   *Keterangan: Antarmuka form login multi-aktor terpusat.*
+
+2. **Halaman Katalog & Detail Pemesanan**
+   Halaman utama mahasiswa untuk melakukan transaksi. Memuat kartu daftar menu, informasi harga, tombol aksi manipulasi keranjang belanja, ringkasan transaksi, serta kolom teks dinamis (*Text Area*) untuk menangani input catatan kustomisasi menu langsung ke basis data.
+   
+   <img width="2200" height="1812" alt="catalog" src="https://github.com/user-attachments/assets/f5a1acc9-17ac-4c13-ab9d-e29594914539" />
+   
+   *Keterangan: Tampilan katalog menu dinamis beserta modul ringkasan pesanan dan instruksi khusus.*
+
+3. **Halaman Transaksi Invoice QRIS**
+   Antarmuka *payment gateway* wajib di awal sesi *checkout*. Halaman ini memuat ID invoice unik, kalkulasi total biaya, tombol unduh berkas gambar, serta *placeholder status box* yang menahan alur transaksi selama menanti proses validasi lunas dari server.
+   
+   <img width="2200" height="1480" alt="Buat Pembayaran" src="https://github.com/user-attachments/assets/1f18187d-4e18-4d81-8b61-173828163908" />
+   
+   *Keterangan: Modul invoice pembayaran QRIS otomatis (Anti-Ghost Order).*
+
+4. **Halaman Lacak Status Antrean**
+   Halaman monitor jarak jauh bagi mahasiswa setelah melakukan pembayaran. Menampilkan visualisasi garis waktu (*timeline tracker status*) secara vertikal untuk melacak perpindahan nilai atribut objek data dari status `In Queue`, `Processing` (Sedang Dimasak), hingga `Ready` secara *real-time*.
+   
+   <img width="2200" height="1480" alt="Buat Liat antrian" src="https://github.com/user-attachments/assets/52c30454-41ad-4c23-a165-ec8f3df9bb82" />
+   
+   *Keterangan: Layar lacak estimasi waktu tunggu dan pergerakan status pesanan secara real-time.*
+
+#### B. Sisi Penjual (Admin Dapur) & Pemilik (Owner)
+
+1. **Halaman Dashboard Dapur Penjual (FIFO Monitor)**
+   Antarmuka khusus panel penjual menggunakan struktur navigasi samping (*sidebar navigation panel*). Berfungsi menampilkan tumpukan data antrean pesanan masuk secara kronologis berdasarkan *timestamp* waktu lunas (FIFO), dilengkapi tombol kendali transisi status objek dapur.
+   
+   <img width="2200" height="1687" alt="penjual" src="https://github.com/user-attachments/assets/c8d55007-b706-4fad-8336-96bc5ca3db23" />
+   
+   *Keterangan: Dashboard kendali produksi dapur penjual berbasis urutan First In First Out.*
+
+2. **Halaman Statistik Finansial & Log Transaksi Owner**
+   Antarmuka eksklusif manajerial bagi pemilik untuk memantau metrik performa bisnis kedai secara mandiri. Menyajikan rangkuman omzet harian, total volume transaksi, menu terlaris, visualisasi grafik pendapatan mingguan, serta tabel log riwayat transaksi lunas yang dapat dicetak.
+   
+   <img width="2200" height="1532" alt="owner" src="https://github.com/user-attachments/assets/2f202635-da93-4ca8-8570-fe758fd819e1" />
+   
+   *Keterangan: Dashboard pelaporan otomatis rekapitulasi data keuangan harian bagi Owner.*
+
+---
+   
 Link Canva: https://canva.link/dgfeuvcim82kbly
